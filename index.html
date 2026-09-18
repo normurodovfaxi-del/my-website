@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-Maktab Dars Jadvali</title>
+    <!-- Google Fonts va FontAwesome Ikonkalari -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==================== 1. GLOBAL VA BASE STYLES ==================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #090d16;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* ==================== 2. NAVIGATION BAR ==================== */
+        .navbar {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .school-address {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* ==================== 3. LAYOUT & HEADER ==================== */
+        .container {
+            padding: 40px 20px;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(12px);
+            padding: 35px 20px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+
+        /* Qidiruv Paneli */
+        .search-wrapper {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        /* ==================== 4. TUGMALAR (NAV-BUTTONS) ==================== */
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #64748b;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .grades-nav, .sub-classes-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: rgba(30, 41, 59, 0.5);
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+        }
+
+        .btn.active-grade {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.45);
+            transform: scale(1.05);
+        }
+
+        .btn.active-class {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.45);
+            transform: scale(1.05);
+        }
+
+        /* ==================== 5. SCHEDULE CONTAINER & CARDS ==================== */
+        .schedule-container {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .schedule-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #facc15;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .day-card {
+            background: rgba(30, 41, 59, 0.35);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: cardAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            position: relative;
+        }
+
+        .day-card:hover {
+            transform: translateY(-6px);
+            background: rgba(30, 41, 59, 0.65);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        .day-card h3 {
+            color: #38bdf8;
+            margin-bottom: 18px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+            padding-bottom: 12px;
+        }
+
+        .day-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .day-card li {
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .day-card li:hover {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.2);
+            transform: translateX(4px);
+        }
+
+        .lesson-num {
+            background: rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: 700;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ==================== 6. FOOTER ==================== */
+        .footer {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 24px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .footer span {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* ==================== 7. RESPONSIVE DESIGN (MEDIA QUERIES) ==================== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 18px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+
+            .schedule-container {
+                padding: 20px;
+            }
+
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigatsiya -->
+    <nav class="navbar">
+        <div class="school-address">
+            <i class="fa-solid fa-location-dot"></i> 35-maktab
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about"><i class="fa-solid fa-school"></i> Maktab haqida</a></li>
+            <li><a href="#leadership"><i class="fa-solid fa-user-tie"></i> Rahbariyat</a></li>
+            <li><a href="#schedule" class="active"><i class="fa-solid fa-calendar-days"></i> Dars jadvali</a></li>
+        </ul>
+    </nav>
+
+    <!-- Asosiy Konteyner -->
+    <div class="container">
+        <header class="header">
+            <h1><i class="fa-solid fa-graduation-cap"></i> Maktab Dars Jadvali</h1>
+            <p>Sinf va guruhni tanlang yoki fanni izlang</p>
+            
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Fan nomi bo'yicha qidiruv..." onkeyup="filterLessons()">
+                </div>
+            </div>
+        </header>
+
+        <div class="section-label">Sinfni tanlang</div>
+        <div class="grades-nav" id="gradeButtons"></div>
+
+        <div class="section-label">Guruh / Parallelni tanlang</div>
+        <div class="sub-classes-nav" id="subClassButtons"></div>
+
+        <div class="schedule-container">
+            <h2 class="schedule-title" id="scheduleTitle"><i class="fa-regular fa-calendar-check"></i> Sinfni tanlang</h2>
+            <div class="days-grid" id="scheduleContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        Muallif: <span>Normurodov Faxriyor Baxtiyorovich</span>
+    </footer>
+
+    <script>
+        // Dars jadvali ma'lumotlari
+        const SCHEDULES = {
+            "class_1a": { title: "1-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Alifbe", "Yozuv", "Ingiliz tili"], "Seshanba": ["Matematika", "Informatika", "Alifbe", "Yozuv"], "Chorshanba": ["Matematika", "Alifbe", "Tarbiya", "Tasviriy san'at"], "Payshanba": ["Yozuv", "Tabiy fan", "Matematika", "Texnalogya", "Musiqa"], "Juma": ["Matematika", "Alifbe", "Yozuv", "Jismoniy tarbiya"] } },
+            "class_1b": { title: "1-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Yozuv", "Ingiliz tili", "Matematika", "Alifbe"], "Seshanba": ["Matematika", "Alifbe", "Yozuv", "Informatika"], "Chorshanba": ["Matematika", "Tasviriy san'at", "Tarbiya", "Alifbe"], "Payshanba": ["Musiqa", "Matematika", "Tabiy fan", "Texnologiya"], "Juma": ["Matematika", "Alifbe", "Musiqa", "Yozuv", "Jismoniy tarbiya"] } },
+            "class_1d": { title: "1-D sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Yozuv", "Ingiliz tili", "Alifbe"], "Seshanba": ["Matematika", "Alifbe", "Yozuv", "Tabiy fan"], "Chorshanba": ["Matematika", "Tasviriy san'at", "Alifbe", "Tarbiya", "Yozuv"], "Payshanba": ["Yozuv", "Matematika", "Texnologiya", "Musiqa"], "Juma": ["Matematika", "Alifbe", "Jismoniy tarbiya", "Informatika"] } },
+            "class_2a": { title: "2-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "O'qish", "Ona tili"], "Seshanba": ["Ingliz tili", "Texnologiya", "O'qish", "Ona tili", "Matematika"], "Chorshanba": ["Matematika", "O'qish", "Tarbiya", "Tasviriy san'at", "Rus tili"], "Payshanba": ["Ona tili", "Musiqa", "Matematika", "Tabiy fan", "Ingiliz tili"], "Juma": ["Matematika", "O'qish", "Ona tili", "Rus tili"] } },
+            "class_2b": { title: "2-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "O'qish", "Ona tili", "Matematika", "Informatika", "Geografiya"], "Seshanba": ["Matematika", "O'qish", "Ona tili", "Ingliz tili"], "Chorshanba": ["Matematika", "Tasviriy san'at", "Tarbiya", "Rus tili", "Ingliz tili"], "Payshanba": ["Ona tili", "Matematika", "Musiqa", "Texnologiya"], "Juma": ["Matematika", "O'qish", "Tabiy fan", "Ona tili", "Rus tili"] } },
+            "class_2d": { title: "2-D sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "O'qish", "Ona tili", "Matematika"], "Seshanba": ["Matematika", "O'qish", "Ona tili", "Ingliz tili", "Musiqa"], "Chorshanba": ["Matematika", "Ingliz tili", "Rus tili", "O'qish", "Informatika"], "Payshanba": ["Ona tili", "Matematika", "Texnologiya", "Tabiy fan"], "Juma": ["Matematika", "O'qish", "Rus tili", "Ona tili", "Tasviriy san'at"] } },
+            "class_3a": { title: "3-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Tasviriy san'at", "Tarbiya", "Rus tili"], "Seshanba": ["Matematika", "Ingliz tili", "Informatika", "Tabiy fan", "Ona tili"], "Chorshanba": ["O'qish", "Ona tili", "Musiqa", "Matematika", "Ingliz tili"], "Payshanba": ["Matematika", "Rus tili", "Ona tili", "O'qish", "Jismoniy tarbiya"], "Juma": ["Matematika", "Ona tili", "O'qish", "Texnologiya", "Jismoniy tarbiya"] } },
+            "class_3b": { title: "3-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Ona tili", "Rus tili", "Matematika"], "Seshanba": ["Matematika", "Ona tili", "Ingliz tili", "Informatika", "Tabiy fan"], "Chorshanba": ["Ingliz tili", "O'qish", "Tasviriy san'at", "Matematika", "Musiqa"], "Payshanba": ["Matematika", "O'qish", "Rus tili", "Ona tili", "Tarbiya"], "Juma": ["Matematika", "O'qish", "Ona tili", "Jismoniy tarbiya", "Texnologiya"] } },
+            "class_3d": { title: "3-D sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Ona tili", "Ingliz tili", "Rus tili", "Matematika"], "Seshanba": ["Matematika", "Ona tili", "Tasviriy san'at", "O'qish", "Informatika"], "Chorshanba": ["Texnologiya", "Matematika", "Tarbiya", "Jismoniy tarbiya", "Tabiy fan"], "Payshanba": ["Matematika", "Ingliz tili", "O'qish", "Tarbiya", "Ona tili"], "Juma": ["Matematika", "O'qish", "Jismoniy tarbiya", "Ona tili", "Musiqa"] } },
+            "class_4a": { title: "4-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Ingliz tili", "Rus tili", "Ona tili"], "Seshanba": ["Matematika", "Ona tili", "Musiqa", "Texnologiya", "Jismoniy tarbiya"], "Chorshanba": ["O'qish", "Ona tili", "Informatika", "Matematika", "Tarbiya"], "Payshanba": ["O'qish", "Ingliz tili", "Tasviriy san'at", "Matematika", "Tabiy fan"], "Juma": ["Matematika", "O'qish", "Rus tili", "Jismoniy tarbiya", "Ona tili"] } },
+            "class_4b": { title: "4-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Rus tili", "Matematika", "Ingliz tili", "Ona tili"], "Seshanba": ["Matematika", "Ona tili", "O'qish", "Jismoniy tarbiya", "Tarbiya"], "Chorshanba": ["Informatika", "Ona tili", "Matematika", "O'qish", "Texnologiya"], "Payshanba": ["Tabiy fan", "O'qish", "Matematika", "Ingliz tili", "Tasviriy san'at"], "Juma": ["Matematika", "Rus tili", "Ona tili", "Musiqa", "Jismoniy tarbiya"] } },
+            "class_5a": { title: "5-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Texnologiya", "Texnologiya", "Matematika", "Ona tili"], "Seshanba": ["Ingliz tili", "Matematika", "Tabiy fan", "Jismoniy tarbiya", "Informatika"], "Chorshanba": ["Rus tili", "Tarix", "Matematika", "Ingliz tili", "Ona tili"], "Payshanba": ["Rus tili", "Tarix", "Ingliz tili", "Ona tili", "Tasviriy san'at"], "Juma": ["Musiqa", "Tarix", "Tarbiya", "Matematika", "Jismoniy tarbiya"], "Shanba": ["Matematika", "Tabiy fan", "Adabiyot", "Ingliz tili", "Ona tili", "Ingliz tili"] } },
+            "class_5b": { title: "5-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Ingliz tili", "Texnologiya", "Texnologiya"], "Seshanba": ["Tabiy fan", "Informatika", "Matematika", "Ingliz tili", "Jismoniy tarbiya"], "Chorshanba": ["Tarix", "Matematika", "Rus tili", "Ona tili", "Ingliz tili"], "Payshanba": ["Ona tili", "Ingliz tili", "Tarix", "Rus tili", "Jismoniy tarbiya"], "Juma": ["Tarix", "Ona tili", "Adabiyot", "Tarbiya", "Matematika"], "Shanba": ["Ona tili", "Tabiy fan", "Matematika", "Adabiyot", "Ingliz tili"] } },
+            "class_6a": { title: "6-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Ingliz tili", "Matematika", "Rus tili", "Ona tili"], "Seshanba": ["Matematika", "Tabiy fan", "Texnologiya", "Texnologiya", "Jismoniy tarbiya"], "Chorshanba": ["Matematika", "Ingliz tili", "Tarix", "Jismoniy tarbiya", "Tasviriy san'at"], "Payshanba": ["Tabiy fan", "Ona tili", "Tarix", "Ingliz tili", "Adabiyot", "Tarbiya"], "Juma": ["Tabiy fan", "Matematika", "Rus tili", "Informatika", "Tarbiya", "Musiqa"], "Shanba": ["Adabiyot", "Matematika", "Ingliz tili", "Adabiyot", "Ona tili"] } },
+            "class_6b": { title: "6-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Rus tili", "Ona tili", "Ingliz tili"], "Seshanba": ["Informatika", "Matematika", "Tabiy fan", "Jismoniy tarbiya", "Ingliz tili"], "Chorshanba": ["Ona tili", "Musiqi", "Matematika", "Tarix", "Jismoniy tarbiya"], "Payshanba": ["Ingliz tili", "Tabiy fan", "Ona tili", "Tasviriy san'at", "Adabiyot"], "Juma": ["Rus tili", "Tabiy fan", "Informatika", "Texnologiya"], "Shanba": ["Ingliz tili", "Tarix", "Matematika", "Ona tili", "Tarbiya"] } },
+            "class_7a": { title: "7-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Matematika", "Ona tili", "Ingliz tili", "Fizika", "Tasviriy san'at"], "Seshanba": ["Matematika", "Informatika", "Geografiya", "Kimyo", "Ingliz tili", "Biologiya"], "Chorshanba": ["Ona tili", "Rus tili", "Musiqi", "Matematika", "Jismoniy tarbiya", "Tarbiya"], "Payshanba": ["Ona tili", "Ingliz tili", "O'zbekiston tarixi", "Rus tili", "Jismoniy tarbiya", "Jahon tarixi"], "Juma": ["Matematika", "Adabiyot", "Jahon tarixi", "Biologiya", "Tehnologiya", "Tehnologiya"], "Shanba": ["Matematika", "Adabiyot", "Ingliz tili", "Kimyo", "Fizika", "Geografiya"] } },
+            "class_7b": { title: "7-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Ona tili", "Matematika", "Fizika", "Tasviriy san'at", "Ingliz tili"], "Seshanba": ["Biologiya", "Matematika", "Informatika", "Ingliz tili", "Geografiya", "Kimyo"], "Chorshanba": ["Matematika", "Ona tili", "Tarbiya", "Adabiyot", "Rus tili", "Jismoniy tarbiya"], "Payshanba": ["Ona tili", "O'zbekiston tarixi", "Ingliz tili", "Jismoniy tarbiya", "Musiqa", "Rus tili"], "Juma": ["O'zbekiston tarixi", "Jahon tarixi", "Tehnologiya", "Tehnologiya", "Matematika", "Biologiya"], "Shanba": ["Adabiyot", "Matematika", "Kimyo", "Ingliz tili", "Geografiya", "Fizika"] } },
+            "class_8a": { title: "8-A sinf dars jadvali", schedule: { "Dushanba": ["Sinf soati", "Fizika", "Algebra", "Ona tili", "Geografiya", "Chizmachilik"], "Seshanba": ["Algebra", "Biologiya", "Ingliz tili", "Informatika", "Jismoniy tarbiya", "Geografiya"], "Chorshanba": ["Ona tili", "Algebra", "Adabiyot", "Texnologiya", "Ingliz tili"], "Payshanba": ["Kimyo", "Ona tili", "Fizika", "O‘zbekiston tarixi", "Rus tili"], "Juma": ["Adabiyot", "Geometriya", "Kimyo", "Jismoniy tarbiya"], "Shanba": ["O‘zbekiston tarixi", "Geometriya", "Biologiya", "Rus tili", "Jahon tarixi", "Ingliz tili"] } },
+            "class_8b": { title: "8-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Algebra", "Ona tili", "Geografiya", "Tehnologiya", "Fizika"], "Seshanba": ["Ingliz tili", "Geografiya", "Algebra", "Biologiya", "Informatika", "Jismoniy tarbiya"], "Chorshanba": ["Algebra", "O'zbekiston tarixi", "Rus tili", "Fizika", "Huquq", "Tarbiya"], "Payshanba": ["Ona tili", "O'zbekiston tarixi", "Rus tili", "Fizika", "Huquq", "Kimyo"], "Juma": ["Geometriya", "Adabiyot", "Tarbiya", "Kimyo", "Jismoniy tarbiya", "Ingliz tili"], "Shanba": ["Geometriya", "Biologiya", "Rus tili", "Adabiyot", "Ingliz tili", "Jahon tarixi"] } },
+            "class_9a": { title: "9-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Algebra", "Informatika", "Jismoniy tarbiya", "Ingliz tili"], "Seshanba": ["Algebra", "Kimyo", "Biologiya", "Geografiya", "Tarbiya", "Jismoniy tarbiya"], "Chorshanba": ["Ona tili", "Chizmachilik", "Algebra", "Ingliz tili", "O'zbekiston tarixi", "Tehnologiya"], "Payshanba": ["Rus tili", "Fizika", "Huquq", "Ona tili", "Geografiya", "Ingliz tili"], "Juma": ["Geometriya", "Adabiyot", "Informatika", "O'zbekiston tarixi", "Rus tili"], "Shanba": ["Kimyo", "Geometriya", "Jahon tarixi", "Ona tili", "Adabiyot", "Biologiya"] } },
+            "class_9b": { title: "9-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Adabiyot", "Ona tili", "Informatika", "Kimyo", "Jismoniy tarbiya"], "Seshanba": ["Geografiya", "Biologiya", "Algebra", "Tehnologiya", "Jismoniy tarbiya", "Ingliz tili"], "Chorshanba": ["Algebra", "Ona tili", "Ingliz tili", "Chizmachilik", "Tarbiya", "O‘zbekiston tarixi"], "Payshanba": ["Fizika", "Ona tili", "Rus tili", "Huquq", "Ingliz tili", "Geografiya"], "Juma": ["O‘zbekiston tarixi", "Adabiyot", "Rus tili", "Geometriya", "Informatika"], "Shanba": ["Geometriya", "Kimyo", "Fizika", "Biologiya", "Jahon tarixi", "Algebra"] } },
+            "class_10a": { title: "10-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Algebra", "Kimyo", "Ona tili", "Iqtisod va biznes"], "Seshanba": ["Algebra", "CHQBT", "Ingliz tili", "Kasbiy ta'lim", "Jismoniy tarbiya", "Tarbiya"], "Chorshanba": ["Geometriya", "Kasbiy ta'lim", "Informatika", "Ona tili", "Huquq", "Ingiliz tili"], "Payshanba": ["Rus tili", "Adabiyot", "Kasbiy ta'lim", "Iqtisod va biznes", "CHQBT", "O'zbekiston tarixi"], "Juma": ["Fizika", "Geometriya", "Adabiyot", "Kimyo", "Jahon tarixi"], "Shanba": ["Fizika", "Rus tili", "Informatika", "Biologiya"] } },
+            "class_10b": { title: "10-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Ona tili", "Algebra", "Iqtisod va biznes", "Kimyo", "CHQBT"], "Seshanba": ["ChQBT", "Algebra", "Tarbiya", "Jismoniy tarbiya", "Ingliz tili"], "Chorshanba": ["Ona tili", "Informatika", "Huquq", "Geometriya", "Ingliz tili", "Kasbiy ta'lim"], "Payshanba": ["Iqtisod va biznes", "Kasbiy ta'lim", "Rus tili", "Ingliz tili", "O‘zbekiston tarixi", "Adabiyot"], "Juma": ["Adabiyot", "Kimyo", "Geometriya", "Kasbiy ta'lim", "Fizika"], "Shanba": ["Fizika", "Fizika", "Biologiya", "Jahon tarixi", "Informatika"] } },
+            "class_11a": { title: "11-A sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Informatika", "Rus tili", "Ona tili", "Algebra"], "Seshanba": ["Ingliz tili", "O'zbekiston tarixi", "Fizika/astronomiya", "Algebra", "Iqtisod va biznes asoslari", "Jahon tarixi"], "Chorshanba": ["Huquq", "Geometriya", "Kasbiy ta'lim", "CHQBT", "Ingliz tili", "Rus tili"], "Payshanba": ["Huquq", "Geometriya", "Kasbiy ta'lim", "CHQBT", "Ingliz tili", "Rus tili"], "Juma": ["Adabiyot", "Geometriya", "Fizika", "Informatika", "Adabiyot"], "Shanba": ["Biologiya", "Tadbirkorlik asoslari", "Ona tili"] } },
+            "class_11b": { title: "11-B sinf dars jadvali", schedule: { "Dushanba": ["Kelajak soati", "Rus tili", "Ona tili", "Algebra", "Informatika"], "Seshanba": ["Kimyo", "Algebra", "Ingliz tili", "CHQBT", "O'zbekiston tarixi", "Fizika"], "Chorshanba": ["Tarbiya", "Huquq", "Jahon tarixi", "Rus tili", "Kasbiy ta'lim", "CHQBT"], "Payshanba": ["Biologiya", "Iqtisod va biznes asoslari", "Ingliz tili", "Jismoniy tarbiya", "Kasbiy ta'lim"], "Juma": ["Informatika", "Geometriya", "Adabiyot", "Fizika/Astronomiya", "Iqtisod va biznes asoslari"], "Shanba": ["Geometriya", "Adabiyot", "Ona tili", "Tadbirkorlik asoslari"] } }
+        };
+
+        const gradeButtonsContainer = document.getElementById('gradeButtons');
+        const subClassButtonsContainer = document.getElementById('subClassButtons');
+        const scheduleTitle = document.getElementById('scheduleTitle');
+        const scheduleContent = document.getElementById('scheduleContent');
+
+        // Sinf raqamlari bo'yicha guruhlash
+        const gradesMap = {};
+        Object.keys(SCHEDULES).forEach(key => {
+            const num = key.replace('class_', '').replace(/[^0-9]/g, '');
+            if (!gradesMap[num]) gradesMap[num] = [];
+            gradesMap[num].push(key);
+        });
+
+        // Sinf tugmalarini chiqarish
+        for (let i = 1; i <= 11; i++) {
+            if (gradesMap[i]) {
+                const btn = document.createElement('button');
+                btn.className = 'btn';
+                btn.innerText = `${i}-Sinf`;
+                btn.onclick = () => showSubClasses(i, btn);
+                gradeButtonsContainer.appendChild(btn);
+            }
+        }
+
+        // Paralel sinf tugmalarini ko'rsatish
+        function showSubClasses(gradeNum, gradeBtn) {
+            document.querySelectorAll('#gradeButtons .btn').forEach(b => b.classList.remove('active-grade'));
+            gradeBtn.classList.add('active-grade');
+
+            subClassButtonsContainer.innerHTML = '';
+            scheduleContent.innerHTML = '';
+            scheduleTitle.innerHTML = `<i class="fa-regular fa-calendar-check"></i> ${gradeNum}-sinf uchun guruhni tanlang`;
+
+            const availableClasses = gradesMap[gradeNum];
+            availableClasses.forEach((classKey, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn';
+                const classNameFormatted = classKey.replace('class_', '').toUpperCase().replace(/([0-9]+)([A-Z])/, '$1-$2');
+                btn.innerText = `${classNameFormatted} sinf`;
+                btn.onclick = () => renderSchedule(classKey, btn);
+                subClassButtonsContainer.appendChild(btn);
+
+                if (index === 0) renderSchedule(classKey, btn);
+            });
+        }
+
+        // Dars jadvalini ekranga chiqarish
+        function renderSchedule(classKey, btnElement) {
+            document.querySelectorAll('#subClassButtons .btn').forEach(b => b.classList.remove('active-class'));
+            if(btnElement) btnElement.classList.add('active-class');
+
+            const data = SCHEDULES[classKey];
+            if (!data) return;
+
+            scheduleTitle.innerHTML = `<i class="fa-solid fa-book-open"></i> ${data.title}`;
+            scheduleContent.innerHTML = '';
+
+            Object.entries(data.schedule).forEach(([day, lessons], index) => {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'day-card';
+                dayCard.style.animationDelay = `${index * 0.08}s`;
+                
+                let lessonsList = lessons.map((lesson, idx) => `
+                    <li>
+                        <span class="lesson-num">${idx + 1}</span>
+                        <span>${lesson}</span>
+                    </li>
+                `).join('');
+                
+                dayCard.innerHTML = `
+                    <h3><i class="fa-regular fa-calendar-days"></i> ${day}</h3>
+                    <ul>${lessonsList}</ul>
+                `;
+                scheduleContent.appendChild(dayCard);
+            });
+        }
+
+        // Fan bo'yicha dinamik qidiruv
+        function filterLessons() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const lessonItems = document.querySelectorAll('.day-card li');
+
+            lessonItems.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.background = input ? 'rgba(56, 189, 248, 0.25)' : 'rgba(255, 255, 255, 0.03)';
+                    item.style.borderColor = input ? '#38bdf8' : 'transparent';
+                } else {
+                    item.style.background = 'rgba(255, 255, 255, 0.03)';
+                    item.style.borderColor = 'transparent';
+                }
+            });
+        }
+
+        // Boshlang'ich holat: Birinchi sinfni avtomukammal tanlash
+        const firstGradeBtn = gradeButtonsContainer.querySelector('button');
+        if (firstGradeBtn) firstGradeBtn.click();
+    </script>
+</body>
+</html>

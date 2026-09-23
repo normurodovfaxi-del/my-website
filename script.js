@@ -33,6 +33,7 @@ const schedules = {
       "Jismoniy tarbiya"
     ]
   },
+
   "class_1b": {
     "Dushanba": [
       "Kelajak soati",
@@ -67,6 +68,7 @@ const schedules = {
       "Jismoniy tarbiya"
     ]
   },
+
   "class_1d": {
     "Dushanba": [
       "Kelajak soati",
@@ -101,6 +103,7 @@ const schedules = {
       "Informatika"
     ]
   },
+
   "class_2a": {
     "Dushanba": [
       "Kelajak soati",
@@ -136,6 +139,7 @@ const schedules = {
       "Rus tili"
     ]
   },
+
   "class_2b": {
     "Dushanba": [
       "Kelajak soati",
@@ -171,6 +175,7 @@ const schedules = {
       "Rus tili"
     ]
   },
+
   "class_2d": {
     "Dushanba": [
       "Kelajak soati",
@@ -206,6 +211,7 @@ const schedules = {
       "Tasviriy san'at"
     ]
   },
+
   "class_3a": {
     "Dushanba": [
       "Kelajak soati",
@@ -243,6 +249,7 @@ const schedules = {
       "Jismoniy tarbiya"
     ]
   },
+
   "class_3b": {
     "Dushanba": [
       "Kelajak soati",
@@ -279,6 +286,7 @@ const schedules = {
       "Texnologiya"
     ]
   },
+
   "class_3d": {
     "Dushanba": [
       "Kelajak soati",
@@ -316,6 +324,7 @@ const schedules = {
       "Musiqa"
     ]
   },
+
   "class_4a": {
     "Dushanba": [
       "Kelajak soati",
@@ -353,6 +362,7 @@ const schedules = {
       "Ona tili"
     ]
   },
+
   "class_4b": {
     "Dushanba": [
       "Kelajak soati",
@@ -390,6 +400,7 @@ const schedules = {
       "Jismoniy tarbiya"
     ]
   },
+
   "class_4d": {
     "Dushanba": [
       "Kelajak soati",
@@ -427,6 +438,11 @@ const schedules = {
       "Musiqa"
     ]
   },
+
+  // =====================================================
+  // 5-SINF
+  // =====================================================
+
   "class_5a": {
     "Dushanba": [
       "Kelajak soati",
@@ -462,8 +478,16 @@ const schedules = {
       "Tarbiya",
       "Matematika",
       "Jismoniy tarbiya"
+    ],
+    "Shanba": [
+      "Musiqa",
+      "Tarix",
+      "Tarbiya",
+      "Matematika",
+      "Jismoniy tarbiya"
     ]
   },
+
   "class_5b": {
     "Dushanba": [
       "Kelajak soati",
@@ -499,8 +523,16 @@ const schedules = {
       "Adabiyot",
       "Tarbiya",
       "Matematika"
+    ],
+    "Shanba": [
+      "Tarix",
+      "Ona tili",
+      "Adabiyot",
+      "Tarbiya",
+      "Matematika"
     ]
   },
+
   "class_5d": {
     "Dushanba": [
       "Kelajak soati",
@@ -536,8 +568,20 @@ const schedules = {
       "Tarix",
       "Jismoniy tarbiya",
       "Tarbiya"
+    ],
+    "Shanba": [
+      "Matematika",
+      "Musiqi",
+      "Tarix",
+      "Jismoniy tarbiya",
+      "Tarbiya"
     ]
   },
+
+  // =====================================================
+  // 6-SINF
+  // =====================================================
+
   "class_6a": {
     "Dushanba": [
       "Kelajak soati",
@@ -575,8 +619,17 @@ const schedules = {
       "Informatika",
       "Tarbiya",
       "Musiqa"
+    ],
+    "Shanba": [
+      "Tabiy fan",
+      "Matematika",
+      "Rus tili",
+      "Informatika",
+      "Tarbiya",
+      "Musiqa"
     ]
   },
+
   "class_6b": {
     "Dushanba": [
       "Kelajak soati",
@@ -611,8 +664,19 @@ const schedules = {
       "Tabiy fan",
       "Informatika",
       "Texnologiya"
+    ],
+    "Shanba": [
+      "Rus tili",
+      "Tabiy fan",
+      "Informatika",
+      "Texnologiya"
     ]
   },
+
+  // =====================================================
+  // 7-SINF
+  // =====================================================
+
   "class_7a": {
     "Dushanba": [
       "Kelajak soati",
@@ -653,8 +717,17 @@ const schedules = {
       "Biologiya",
       "Tehnologiya",
       "Tehnologiya"
+    ],
+    "Shanba": [
+      "Matematika",
+      "Adabiyot",
+      "Jahon tarixi",
+      "Biologiya",
+      "Tehnologiya",
+      "Tehnologiya"
     ]
   },
+
   "class_7b": {
     "Dushanba": [
       "Kelajak soati",
@@ -694,8 +767,21 @@ const schedules = {
       "Tehnologiya",
       "Matematika",
       "Biologiya"
+    ],
+    "Shanba": [
+      "O'zbekiston tarixi",
+      "Jahon tarixi",
+      "Tehnologiya",
+      "Tehnologiya",
+      "Matematika",
+      "Biologiya"
     ]
   },
+
+  // =====================================================
+  // 8-SINF
+  // =====================================================
+
   "class_8a": {
     "Dushanba": [
       "Sinf soati",
@@ -732,8 +818,15 @@ const schedules = {
       "Geometriya",
       "Kimyo",
       "Jismoniy tarbiya"
+    ],
+    "Shanba": [
+      "Adabiyot",
+      "Geometriya",
+      "Kimyo",
+      "Jismoniy tarbiya"
     ]
   },
+
   "class_8b": {
     "Dushanba": [
       "Kelajak soati",
@@ -774,8 +867,21 @@ const schedules = {
       "Kimyo",
       "Jismoniy tarbiya",
       "Ingliz tili"
+    ],
+    "Shanba": [
+      "Geometriya",
+      "Adabiyot",
+      "Tarbiya",
+      "Kimyo",
+      "Jismoniy tarbiya",
+      "Ingliz tili"
     ]
   },
+
+  // =====================================================
+  // 9-SINF
+  // =====================================================
+
   "class_9a": {
     "Dushanba": [
       "Kelajak soati",
@@ -814,8 +920,16 @@ const schedules = {
       "Informatika",
       "O.zbekiston tarixi",
       "Rus tili"
+    ],
+    "Shanba": [
+      "Geometriya",
+      "Adabiyot",
+      "Informatika",
+      "O.zbekiston tarixi",
+      "Rus tili"
     ]
   },
+
   "class_9b": {
     "Dushanba": [
       "Kelajak soati",
@@ -855,8 +969,20 @@ const schedules = {
       "Rus tili",
       "Geometriya",
       "Informatika"
+    ],
+    "Shanba": [
+      "O‘zbekiston tarixi",
+      "Adabiyot",
+      "Rus tili",
+      "Geometriya",
+      "Informatika"
     ]
   },
+
+  // =====================================================
+  // 10-SINF
+  // =====================================================
+
   "class_10a": {
     "Dushanba": [
       "Kelajak soati",
@@ -895,8 +1021,16 @@ const schedules = {
       "Adabiyot",
       "Kimyo",
       "Jahon tarixi"
+    ],
+    "Shanba": [
+      "Fizika",
+      "Geometriya",
+      "Adabiyot",
+      "Kimyo",
+      "Jahon tarixi"
     ]
   },
+
   "class_10b": {
     "Dushanba": [
       "Kelajak soati",
@@ -935,8 +1069,20 @@ const schedules = {
       "Geometriya",
       "Kasbiy ta'lim",
       "Fizika"
+    ],
+    "Shanba": [
+      "Adabiyot",
+      "Kimyo",
+      "Geometriya",
+      "Kasbiy ta'lim",
+      "Fizika"
     ]
   },
+
+  // =====================================================
+  // 11-SINF
+  // =====================================================
+
   "class_11a": {
     "Dushanba": [
       "Kelajak soati",
@@ -975,8 +1121,16 @@ const schedules = {
       "Fizika",
       "Informatika",
       "Adabiyot"
+    ],
+    "Shanba": [
+      "Adabiyot",
+      "Geometriya",
+      "Fizika",
+      "Informatika",
+      "Adabiyot"
     ]
   },
+
   "class_11b": {
     "Dushanba": [
       "Kelajak soati",
@@ -1014,174 +1168,758 @@ const schedules = {
       "Adabiyot",
       "Fizika/Astronomiya",
       "iqtisod va biznes asoslari"
+    ],
+    "Shanba": [
+      "Informatika",
+      "Geometriya",
+      "Adabiyot",
+      "Fizika/Astronomiya",
+      "iqtisod va biznes asoslari"
     ]
   }
 };
 
+
+// =====================================================
+// SINFLAR NOMI
+// =====================================================
+
 const classLabels = {
-  class_1a:"1-A", class_1b:"1-B", class_1d:"1-D",
-  class_2a:"2-A", class_2b:"2-B", class_2d:"2-D",
-  class_3a:"3-A", class_3b:"3-B", class_3d:"3-D",
-  class_4a:"4-A", class_4b:"4-B", class_4d:"4-D",
-  class_5a:"5-A", class_5b:"5-B", class_5d:"5-D",
-  class_6a:"6-A", class_6b:"6-B",
-  class_7a:"7-A", class_7b:"7-B",
-  class_8a:"8-A", class_8b:"8-B",
-  class_9a:"9-A", class_9b:"9-B",
-  class_10a:"10-A", class_10b:"10-B",
-  class_11a:"11-A", class_11b:"11-B",
+  class_1a: "1-A",
+  class_1b: "1-B",
+  class_1d: "1-D",
+
+  class_2a: "2-A",
+  class_2b: "2-B",
+  class_2d: "2-D",
+
+  class_3a: "3-A",
+  class_3b: "3-B",
+  class_3d: "3-D",
+
+  class_4a: "4-A",
+  class_4b: "4-B",
+  class_4d: "4-D",
+
+  class_5a: "5-A",
+  class_5b: "5-B",
+  class_5d: "5-D",
+
+  class_6a: "6-A",
+  class_6b: "6-B",
+
+  class_7a: "7-A",
+  class_7b: "7-B",
+
+  class_8a: "8-A",
+  class_8b: "8-B",
+
+  class_9a: "9-A",
+  class_9b: "9-B",
+
+  class_10a: "10-A",
+  class_10b: "10-B",
+
+  class_11a: "11-A",
+  class_11b: "11-B"
 };
 
-const classList = document.getElementById("classList");
-const scheduleResult = document.getElementById("scheduleResult");
 
-function renderSchedule(key, selectedDay = "Dushanba") {
-  document.querySelectorAll(".class-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.class === key);
-  });
+const classList =
+  document.getElementById("classList");
+
+const scheduleResult =
+  document.getElementById("scheduleResult");
+
+
+// =====================================================
+// HAFTA KUNLARI
+// =====================================================
+
+const weekOrder = [
+  "Dushanba",
+  "Seshanba",
+  "Chorshanba",
+  "Payshanba",
+  "Juma",
+  "Shanba"
+];
+
+
+// =====================================================
+// DARS JADVALINI CHIQARISH
+// =====================================================
+
+function renderSchedule(
+  key,
+  selectedDay = "Dushanba"
+) {
+
+  document
+    .querySelectorAll(".class-btn")
+    .forEach(btn => {
+
+      btn.classList.toggle(
+        "active",
+        btn.dataset.class === key
+      );
+
+    });
 
 
   const data = schedules[key];
+
   if (!data) return;
 
-  const weekOrder = ["Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma"];
-  const availableDays = weekOrder.filter(day => data[day]);
-  const day = availableDays.includes(selectedDay) ? selectedDay : availableDays[0];
-  const lessons = data[day] || [];
 
-  const dayButtons = availableDays.map(d => `
-    <button class="day-tab ${d === day ? "active" : ""}" type="button" data-day="${d}">
-      <span>${dayIcon(d)}</span>${d}
-    </button>`).join("");
+  const availableDays =
+    weekOrder.filter(
+      day => data[day]
+    );
 
-  const lessonCards = lessons.map((lesson, index) => `
-    <article class="lesson-card">
-      <div class="lesson-number">${String(index + 1).padStart(2, "0")}</div>
-      <div class="lesson-info">
-        <span>${day}</span>
-        <strong>${lesson}</strong>
-      </div>
-      <div class="lesson-arrow">→</div>
-    </article>`).join("");
+
+  const day =
+    availableDays.includes(selectedDay)
+      ? selectedDay
+      : availableDays[0];
+
+
+  const lessons =
+    data[day] || [];
+
+
+  const dayButtons =
+    availableDays.map(d => `
+
+      <button
+        class="day-tab ${d === day ? "active" : ""}"
+        type="button"
+        data-day="${d}"
+      >
+
+        <span>
+          ${dayIcon(d)}
+        </span>
+
+        ${d}
+
+      </button>
+
+    `).join("");
+
+
+  const lessonCards =
+    lessons.map(
+      (lesson, index) => `
+
+        <article class="lesson-card">
+
+          <div class="lesson-number">
+            ${String(index + 1).padStart(2, "0")}
+          </div>
+
+          <div class="lesson-info">
+
+            <span>
+              ${day}
+            </span>
+
+            <strong>
+              ${lesson}
+            </strong>
+
+          </div>
+
+          <div class="lesson-arrow">
+            →
+          </div>
+
+        </article>
+
+      `
+    ).join("");
+
 
   scheduleResult.innerHTML = `
+
     <div class="schedule-title">
+
       <div>
-        <h3>📚 ${classLabels[key]} sinf dars jadvali</h3>
-        <p class="schedule-subtitle">Hafta kunlari alohida ko'rsatiladi</p>
+
+        <h3>
+          📚 ${classLabels[key]} sinf dars jadvali
+        </h3>
+
+        <p class="schedule-subtitle">
+          Hafta kunlari alohida ko'rsatiladi
+        </p>
+
       </div>
-      <span class="week-badge">5 KUNLIK TA'LIM</span>
+
+      <span class="week-badge">
+        ${availableDays.length} KUNLIK TA'LIM
+      </span>
+
     </div>
 
-    <div class="day-tabs" role="tablist" aria-label="Hafta kunlari">
+
+    <div
+      class="day-tabs"
+      role="tablist"
+      aria-label="Hafta kunlari"
+    >
+
       ${dayButtons}
+
     </div>
+
 
     <div class="selected-day-heading">
-      <div class="selected-day-icon">${dayIcon(day)}</div>
-      <div><small>BUGUNGI KUN</small><h4>${day}</h4></div>
-      <span>${lessons.length} ta dars</span>
+
+      <div class="selected-day-icon">
+        ${dayIcon(day)}
+      </div>
+
+      <div>
+
+        <small>
+          TANLANGAN KUN
+        </small>
+
+        <h4>
+          ${day}
+        </h4>
+
+      </div>
+
+      <span>
+        ${lessons.length} ta dars
+      </span>
+
     </div>
 
-    <div class="lessons-list">
-      ${lessonCards || `<div class="empty-state"><span>📚</span><h3>Darslar kiritilmagan</h3></div>`}
-    </div>`;
 
-  document.querySelectorAll(".day-tab").forEach(btn => {
-    btn.addEventListener("click", () => renderSchedule(key, btn.dataset.day));
-  });
+    <div class="lessons-list">
+
+      ${
+        lessonCards ||
+        `
+          <div class="empty-state">
+
+            <span>📚</span>
+
+            <h3>
+              Darslar kiritilmagan
+            </h3>
+
+          </div>
+        `
+      }
+
+    </div>
+
+  `;
+
+
+  document
+    .querySelectorAll(".day-tab")
+    .forEach(btn => {
+
+      btn.addEventListener(
+        "click",
+        () => {
+
+          renderSchedule(
+            key,
+            btn.dataset.day
+          );
+
+        }
+      );
+
+    });
+
 }
+
+
+// =====================================================
+// HAFTA KUNLARI ICON
+// =====================================================
 
 function dayIcon(day) {
+
   return {
+
     "Dushanba": "🌅",
+
     "Seshanba": "📘",
+
     "Chorshanba": "🎯",
+
     "Payshanba": "🚀",
-    "Juma": "🌟"
+
+    "Juma": "🌟",
+
+    "Shanba": "📚"
+
   }[day] || "📅";
+
 }
 
-document.querySelectorAll(".class-btn").forEach(btn => {
-  btn.addEventListener("click", () => renderSchedule(btn.dataset.class));
-});
 
-// Carousel
-const slides = [...document.querySelectorAll(".slide")];
-const dotsBox = document.getElementById("sliderDots");
+// =====================================================
+// SINF TANLASH
+// =====================================================
+
+document
+  .querySelectorAll(".class-btn")
+  .forEach(btn => {
+
+    btn.addEventListener(
+      "click",
+      () => {
+
+        renderSchedule(
+          btn.dataset.class
+        );
+
+      }
+    );
+
+  });
+
+
+// =====================================================
+// CAROUSEL
+// =====================================================
+
+const slides = [
+  ...document.querySelectorAll(".slide")
+];
+
+const dotsBox =
+  document.getElementById("sliderDots");
+
 let currentSlide = 0;
+
 let timer;
 
+
+// Dots
 slides.forEach((_, i) => {
-  const dot = document.createElement("button");
-  dot.className = "dot" + (i === 0 ? " active" : "");
+
+  const dot =
+    document.createElement("button");
+
+  dot.className =
+    "dot" +
+    (i === 0
+      ? " active"
+      : "");
+
   dot.type = "button";
-  dot.ariaLabel = `${i + 1}-rasm`;
-  dot.addEventListener("click", () => showSlide(i, true));
+
+  dot.ariaLabel =
+    `${i + 1}-rasm`;
+
+
+  dot.addEventListener(
+    "click",
+    () => {
+
+      showSlide(
+        i,
+        true
+      );
+
+    }
+  );
+
+
   dotsBox.appendChild(dot);
+
 });
 
-function showSlide(index, manual = false) {
-  currentSlide = (index + slides.length) % slides.length;
-  slides.forEach((s, i) => s.classList.toggle("active", i === currentSlide));
-  document.querySelectorAll(".dot").forEach((d, i) => d.classList.toggle("active", i === currentSlide));
-  if (manual) restartCarousel();
+
+function showSlide(
+  index,
+  manual = false
+) {
+
+  currentSlide =
+    (index + slides.length) %
+    slides.length;
+
+
+  slides.forEach(
+    (s, i) => {
+
+      s.classList.toggle(
+        "active",
+        i === currentSlide
+      );
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(".dot")
+    .forEach(
+      (d, i) => {
+
+        d.classList.toggle(
+          "active",
+          i === currentSlide
+        );
+
+      }
+    );
+
+
+  if (manual) {
+
+    restartCarousel();
+
+  }
+
 }
+
 
 function restartCarousel() {
+
   clearInterval(timer);
-  timer = setInterval(() => showSlide(currentSlide + 1), 5000);
+
+  timer =
+    setInterval(
+      () => {
+
+        showSlide(
+          currentSlide + 1
+        );
+
+      },
+      5000
+    );
+
 }
 
-document.getElementById("prevSlide").addEventListener("click", () => showSlide(currentSlide - 1, true));
-document.getElementById("nextSlide").addEventListener("click", () => showSlide(currentSlide + 1, true));
+
+document
+  .getElementById("prevSlide")
+  .addEventListener(
+    "click",
+    () => {
+
+      showSlide(
+        currentSlide - 1,
+        true
+      );
+
+    }
+  );
+
+
+document
+  .getElementById("nextSlide")
+  .addEventListener(
+    "click",
+    () => {
+
+      showSlide(
+        currentSlide + 1,
+        true
+      );
+
+    }
+  );
+
+
 restartCarousel();
 
-// Mobile menu
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-menuToggle.addEventListener("click", () => mainNav.classList.toggle("open"));
-document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => mainNav.classList.remove("open")));
 
-// Active navigation
-const sections = [...document.querySelectorAll("main section[id]")];
-const navLinks = [...document.querySelectorAll(".nav-link")];
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id));
-    }
+// =====================================================
+// MOBILE MENU
+// =====================================================
+
+const menuToggle =
+  document.getElementById(
+    "menuToggle"
+  );
+
+const mainNav =
+  document.getElementById(
+    "mainNav"
+  );
+
+
+menuToggle.addEventListener(
+  "click",
+  () => {
+
+    mainNav.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+document
+  .querySelectorAll(".nav-link")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        mainNav.classList.remove(
+          "open"
+        );
+
+      }
+    );
+
   });
-}, { rootMargin:"-35% 0px -55% 0px" });
-sections.forEach(section => observer.observe(section));
 
-// Search
-const search = document.getElementById("siteSearch");
-search.addEventListener("input", e => {
-  const q = e.target.value.trim().toLowerCase();
-  document.querySelectorAll("main section").forEach(section => {
-    if (!q) {
-      section.style.display = "";
-      return;
+
+// =====================================================
+// ACTIVE NAVIGATION
+// =====================================================
+
+const sections = [
+  ...document.querySelectorAll(
+    "main section[id]"
+  )
+];
+
+
+const navLinks = [
+  ...document.querySelectorAll(
+    ".nav-link"
+  )
+];
+
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            navLinks.forEach(
+              link => {
+
+                link.classList.toggle(
+                  "active",
+
+                  link.getAttribute(
+                    "href"
+                  ) ===
+                  "#" +
+                  entry.target.id
+                );
+
+              }
+            );
+
+          }
+
+        }
+      );
+
+    },
+    {
+      rootMargin:
+        "-35% 0px -55% 0px"
     }
-    section.style.display = section.innerText.toLowerCase().includes(q) ? "" : "none";
-  });
-});
-
-// Top button
-const toTop = document.getElementById("toTop");
-window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 500));
-toTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+  );
 
 
-// Kunduzgi / tungi rejim
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
-function applyTheme(theme){
-  document.body.classList.toggle("light-mode", theme === "light");
-  if(themeIcon) themeIcon.textContent = theme === "light" ? "🌙" : "☀️";
-  if(themeToggle){ themeToggle.setAttribute("aria-label", theme === "light" ? "Tungi rejimga o'tish" : "Kunduzgi rejimga o'tish"); themeToggle.title = theme === "light" ? "Tungi rejim" : "Kunduzgi rejim"; }
-  localStorage.setItem("school-theme", theme);
+sections.forEach(
+  section => {
+
+    observer.observe(
+      section
+    );
+
+  }
+);
+
+
+// =====================================================
+// SEARCH
+// =====================================================
+
+const search =
+  document.getElementById(
+    "siteSearch"
+  );
+
+
+search.addEventListener(
+  "input",
+  e => {
+
+    const q =
+      e.target.value
+        .trim()
+        .toLowerCase();
+
+
+    document
+      .querySelectorAll(
+        "main section"
+      )
+      .forEach(
+        section => {
+
+          if (!q) {
+
+            section.style.display =
+              "";
+
+            return;
+
+          }
+
+
+          section.style.display =
+            section.innerText
+              .toLowerCase()
+              .includes(q)
+                ? ""
+                : "none";
+
+        }
+      );
+
+  }
+);
+
+
+// =====================================================
+// TOP BUTTON
+// =====================================================
+
+const toTop =
+  document.getElementById(
+    "toTop"
+  );
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    toTop.classList.toggle(
+      "show",
+      window.scrollY > 500
+    );
+
+  }
+);
+
+
+toTop.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+);
+
+
+// =====================================================
+// KUNDUZGI / TUNGI REJIM
+// =====================================================
+
+const themeToggle =
+  document.getElementById(
+    "themeToggle"
+  );
+
+
+const themeIcon =
+  document.getElementById(
+    "themeIcon"
+  );
+
+
+function applyTheme(theme) {
+
+  document.body.classList.toggle(
+    "light-mode",
+    theme === "light"
+  );
+
+
+  if (themeIcon) {
+
+    themeIcon.textContent =
+      theme === "light"
+        ? "🌙"
+        : "☀️";
+
+  }
+
+
+  if (themeToggle) {
+
+    themeToggle.setAttribute(
+      "aria-label",
+
+      theme === "light"
+        ? "Tungi rejimga o'tish"
+        : "Kunduzgi rejimga o'tish"
+    );
+
+
+    themeToggle.title =
+      theme === "light"
+        ? "Tungi rejim"
+        : "Kunduzgi rejim";
+
+  }
+
+
+  localStorage.setItem(
+    "school-theme",
+    theme
+  );
+
 }
-applyTheme(localStorage.getItem("school-theme") || "dark");
-themeToggle?.addEventListener("click",()=>applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light"));
+
+
+applyTheme(
+  localStorage.getItem(
+    "school-theme"
+  ) || "dark"
+);
+
+
+themeToggle?.addEventListener(
+  "click",
+  () => {
+
+    applyTheme(
+
+      document.body
+        .classList
+        .contains("light-mode")
+        ? "dark"
+        : "light"
+
+    );
+
+  }
+);

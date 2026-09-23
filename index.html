@@ -1,273 +1,681 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="35-maktab — ta'lim, tarbiya va taraqqiyot maskani.">
-  <title>35-MAKTAB | Ta'lim va taraqqiyot maskani</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="page-bg"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="35-maktab — ta'lim, tarbiya va taraqqiyot maskani."
+    />
+    <title>35-MAKTAB | Ta'lim va taraqqiyot maskani</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
 
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#bosh-sahifa" aria-label="35-maktab bosh sahifa">
-        <span class="brand-icon">🏫</span>
-        <span>
-          <strong>35-MAKTAB</strong>
-          <small>Ta'lim va taraqqiyot maskani</small>
-        </span>
-      </a>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="#bosh-sahifa" aria-label="35-maktab bosh sahifa">
+          <span class="brand-icon">🏫</span>
+          <span>
+            <strong>35-MAKTAB</strong>
+            <small>Ta'lim va taraqqiyot maskani</small>
+          </span>
+        </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish">
+          ☰
+        </button>
 
-      <nav class="main-nav" id="mainNav">
-        <a class="nav-link active" href="#bosh-sahifa">Bosh sahifa</a>
-        <a class="nav-link" href="#maktab-haqida">Maktab haqida</a>
-        <a class="nav-link" href="#rahbariyat">Maktab rahbariyati</a>
-        <a class="nav-link" href="#qoidalar">Maktab qoidalari</a>
-        <a class="nav-link" href="#yutuqlar">Maktab yutuqlari</a>
-        <a class="nav-link" href="#jadval">Dars jadvali</a>
-      </nav>
+        <nav class="main-nav" id="mainNav">
+          <a class="nav-link active" href="#bosh-sahifa">Bosh sahifa</a>
+          <a class="nav-link" href="#maktab-haqida">Maktab haqida</a>
+          <a class="nav-link" href="#rahbariyat">Maktab rahbariyati</a>
+          <a class="nav-link" href="#qoidalar">Maktab qoidalari</a>
+          <a class="nav-link" href="#yutuqlar">Maktab yutuqlari</a>
+          <a class="nav-link" href="#jadval">Dars jadvali</a>
+        </nav>
 
-      <div class="nav-tools">
-        <div class="nav-search">
-          <span>⌕</span>
-          <input id="siteSearch" type="search" placeholder="Qidirish..." aria-label="Saytdan qidirish">
-        </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Kunduzgi rejimga o'tish" title="Kunduzgi/tungi rejim"><span id="themeIcon">☀️</span></button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="bosh-sahifa">
-      <div class="hero-grid container">
-        <div class="hero-copy">
-          <span class="eyebrow">35-MAKTAB • TERMIZ TUMANI</span>
-          <h1>Bilim, tarbiya va <span>kelajak</span> sari birgalikda.</h1>
-          <p>O'quvchilarimizning bilim olishi, ijodiy qobiliyati, sportdagi faolligi va ma'naviy kamoloti uchun zamonaviy maktab muhiti.</p>
-          <div class="hero-actions">
-            <a href="#rahbariyat" class="btn btn-primary">Rahbariyat bilan tanishing →</a>
-            <a href="#jadval" class="btn btn-ghost">Dars jadvalini ko'rish</a>
+        <div class="nav-tools">
+          <div class="nav-search">
+            <span>⌕</span>
+            <input
+              id="siteSearch"
+              type="search"
+              placeholder="Qidirish..."
+              aria-label="Saytdan qidirish"
+            />
           </div>
-          <div class="hero-stats">
-            <div><b>1–11</b><span>Sinf bosqichlari</span></div>
-            <div><b>27+</b><span>Jadvaldagi sinflar</span></div>
-            <div><b>∞</b><span>Orzular va imkoniyatlar</span></div>
-          </div>
-        </div>
-
-        <div class="hero-slider" aria-label="Maktab yangiliklari va yutuqlari">
-          <div class="slider-track" id="sliderTrack">
-            <article class="slide active"><img src="assets/turon_sahna_yangi.jpg" alt="Turon teatri tanlovi"><div class="slide-overlay"></div><div class="slide-caption"><span>🏆 Maktab yutug'i</span><h2>Turon teatri tanlovi — tumanda 2-o'rin</h2><p>Ijod, iste'dod va jamoaviy mehnat munosib natijaga aylandi.</p></div></article>
-            <article class="slide"><img src="assets/sport_zal_yangi.jpg" alt="Maktab sport jamoasi"><div class="slide-overlay"></div><div class="slide-caption"><span>🥋 SPORT VA SOG'LOM TURMUSH</span><h2>Sport — iroda va jamoaviylik maktabi</h2><p>O'quvchilarimiz sport mashg'ulotlarida faol ishtirok etmoqda.</p></div></article>
-            <article class="slide"><img src="assets/sport_maydon_yangi.jpg" alt="Maktab sport tadbiri"><div class="slide-overlay"></div><div class="slide-caption"><span>⚽ SPORT TADBIRI</span><h2>Faollik, do'stlik va sog'lom raqobat</h2><p>Maktabimizda sport tadbirlari orqali o'quvchilar faolligi qo'llab-quvvatlanadi.</p></div></article>
-            <article class="slide"><img src="assets/turon.jpg" alt="Turon teatri sahnasi"><div class="slide-overlay"></div><div class="slide-caption"><span>🎭 IJODIY FAOLIYAT</span><h2>Turon teatri — iste'dodlar sahnasi</h2><p>O'quvchilarimiz san'at va madaniyat yo'nalishida o'z qobiliyatlarini namoyon etmoqda.</p></div></article>
-            <article class="slide"><img src="assets/director.jpg" alt="Maktab direktori"><div class="slide-overlay"></div><div class="slide-caption"><span>👔 RAHBARIYAT</span><h2>Ta'lim sifati — bosh maqsadimiz</h2><p>Har bir o'quvchi uchun bilim olish va rivojlanish imkoniyati.</p></div></article>
-            <article class="slide"><img src="assets/deputy.jpg" alt="O'quv ishlari bo'yicha direktor o'rinbosari"><div class="slide-overlay"></div><div class="slide-caption"><span>📚 TA'LIM</span><h2>Bilim sari dadil qadam</h2><p>Ustoz va o'quvchi hamkorligi — kelajak poydevori.</p></div></article>
-            <article class="slide"><img src="assets/manaviyat.jpg" alt="Ma'naviy-ma'rifiy ishlar"><div class="slide-overlay"></div><div class="slide-caption"><span>🌱 MA'NAVIYAT</span><h2>Tarbiya — komil inson sari yo'l</h2><p>Milliy qadriyat, odob va vatanparvarlik ruhida tarbiya.</p></div></article>
-            <article class="slide"><img src="assets/psychologist.jpg" alt="Maktab psixologi"><div class="slide-overlay"></div><div class="slide-caption"><span>💙 PSIXOLOGIK XIZMAT</span><h2>Har bir o'quvchi — e'tibor markazida</h2><p>Qo'llab-quvvatlash, tinglash va sog'lom maktab muhitini yaratish.</p></div></article>
-          </div>
-          <button class="slider-arrow prev" id="prevSlide" aria-label="Oldingi rasm">‹</button><button class="slider-arrow next" id="nextSlide" aria-label="Keyingi rasm">›</button><div class="slider-dots" id="sliderDots"></div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Kunduzgi rejimga o'tish"
+            title="Kunduzgi/tungi rejim"
+          >
+            <span id="themeIcon">☀️</span>
+          </button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="section" id="maktab-haqida">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">BIZNING MAKTAB</span>
-          <h2>Maktab haqida</h2>
-          <p>35-maktab — bilim, tarbiya, ijod va sportni birlashtiruvchi ta'lim maskani.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-main glass-card">
-            <div class="big-icon">🏫</div>
-            <h3>Ta'lim va taraqqiyot maskani</h3>
-            <p>Bizning maqsadimiz — o'quvchilarning bilimga qiziqishini oshirish, mustaqil fikrlashini rivojlantirish, odob-axloq va vatanparvarlik tuyg'ularini mustahkamlash.</p>
-            <div class="mini-points">
-              <span>✓ Sifatli ta'lim</span>
-              <span>✓ Kuchli tarbiya</span>
-              <span>✓ Ijod va sport</span>
-              <span>✓ Ota-ona hamkorligi</span>
+    <main>
+      <section class="hero" id="bosh-sahifa">
+        <div class="hero-grid container">
+          <div class="hero-copy">
+            <span class="eyebrow">35-MAKTAB • TERMIZ TUMANI</span>
+            <h1>Bilim, tarbiya va <span>kelajak</span> sari birgalikda.</h1>
+            <p>
+              O'quvchilarimizning bilim olishi, ijodiy qobiliyati, sportdagi
+              faolligi va ma'naviy kamoloti uchun zamonaviy maktab muhiti.
+            </p>
+            <div class="hero-actions">
+              <a href="#rahbariyat" class="btn btn-primary"
+                >Rahbariyat bilan tanishing →</a
+              >
+              <a href="#jadval" class="btn btn-ghost">Dars jadvalini ko'rish</a>
+            </div>
+            <div class="hero-stats">
+              <div><b>1–11</b><span>Sinf bosqichlari</span></div>
+              <div><b>27+</b><span>Jadvaldagi sinflar</span></div>
+              <div><b>∞</b><span>Orzular va imkoniyatlar</span></div>
             </div>
           </div>
-          <div class="about-card glass-card"><span>📖</span><h3>Bilim</h3><p>Fanlarni puxta o'zlashtirish va zamonaviy ko'nikmalarni rivojlantirish.</p></div>
-          <div class="about-card glass-card"><span>🤝</span><h3>Hamkorlik</h3><p>Ustoz, o'quvchi va ota-onalar o'rtasida mustahkam hamkorlik.</p></div>
-          <div class="about-card glass-card"><span>🎨</span><h3>Ijodkorlik</h3><p>Teatr, musiqa, san'at va turli tanlovlarda o'z iste'dodini namoyon etish.</p></div>
-          <div class="about-card glass-card"><span>⚽</span><h3>Sport</h3><p>Sog'lom turmush tarzi va jamoaviy sport faoliyatini qo'llab-quvvatlash.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section leadership-section" id="rahbariyat">
-      <div class="container">
-        <div class="section-heading center">
-          <span class="eyebrow">BOSHQARUV JAMOASI</span>
-          <h2>Maktab rahbariyati</h2>
-          <p>Ta'lim, tarbiya va o'quvchilar rivojini boshqarib boruvchi mas'ul xodimlar jamoasi.</p>
-        </div>
-
-        <div class="leaders-grid">
-          <article class="leader-card">
-            <div class="portrait"><img src="assets/director.jpg" alt="Maktab direktori"></div>
-            <span class="role">MAKTAB RAHBARI</span>
-            <h3> Gafulov Erkin</h3>
-            <p class="role-title">Maktab direktori • Strategik rivojlanish va boshqaruv rahbari</p>
-            <div class="work-box"><b>💼 Ish faoliyati</b><p>Maktabning umumiy boshqaruvi, ta'lim sifati, jamoa faoliyati va rivojlanish jarayonlarini muvofiqlashtirish.</p></div>
-          </article>
-
-          <article class="leader-card">
-            <div class="portrait"><img src="assets/deputy.jpg" alt="Direktor o'rinbosari"></div>
-            <span class="role">MA'NAVIY-MA'RIFIY YO'NALISH</span>
-            <h3> Murtazov Nuriddin</h3>
-            <p class="role-title">Ma'naviy-ma'rifiy ishlar rahbari • Tarbiyaviy yo'nalish koordinatori</p>
-            <div class="work-box"><b>💼 Ish faoliyati</b><p>O'quvchilarning ma'naviy tarbiyasi, ijtimoiy faolligi, tadbirlar va tarbiyaviy ishlarni tashkil etish.</p></div>
-          </article>
-
-          <article class="leader-card">
-            <div class="portrait"><img src="assets/manaviyat.jpg" alt="Ma'naviy-ma'rifiy ishlar mas'uli"></div>
-        <span class="role">TALIM YO'NALISHLARI</span>
-            <h3> Xudoyshukurov Dilshod</h3>
-            <p class="role-title">O'quv ishlari bo'yicha direktor o'rinbosari • Ta'lim jarayonlari koordinatori</p>
-            <div class="work-box"><b>💼 Ish faoliyati</b><p>Dars jarayonini tashkil etish, o'qituvchilar faoliyatini muvofiqlashtirish va o'quv jarayonini nazorat qilish.</p></div>
-          </article>
-
-          <article class="leader-card">
-            <div class="portrait"><img src="assets/psychologist.jpg" alt="Maktab psixologi"></div>
-            <span class="role">PSIXOLOGIK XIZMAT</span>
-            <h3> Jo`raboyeva Zarina</h3>
-            <p class="role-title">Maktab psixologi • O'quvchilarni qo'llab-quvvatlash mutaxassisi</p>
-            <div class="work-box"><b>💼 Ish faoliyati</b><p>O'quvchilarning psixologik holatini qo'llab-quvvatlash, maslahatlar va sog'lom ijtimoiy muhitni mustahkamlash.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section rules-section" id="qoidalar">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">TARTIB VA MAS'ULIYAT</span>
-          <h2>Maktab qoidalari</h2>
-          <p>Maktabdagi o'quv jarayonini tartibli va xavfsiz tashkil etishga yordam beradigan asosiy qoidalar.</p>
-        </div>
-        <div class="rules-grid">
-          <div class="rule-card"><span>01</span><h3>Vaqtida kelish</h3><p>Darslarga o'z vaqtida kelish va mashg'ulotlarga tayyor holda qatnashish.</p></div>
-          <div class="rule-card"><span>02</span><h3>Hurmat</h3><p>Ustozlar, sinfdoshlar va maktab xodimlariga hurmat bilan munosabatda bo'lish.</p></div>
-          <div class="rule-card"><span>03</span><h3>Tozalik</h3><p>Sinf xonalari, hovli va umumiy hududlarni ozoda saqlash.</p></div>
-          <div class="rule-card"><span>04</span><h3>Telefon madaniyati</h3><p>Dars paytida telefon va boshqa qurilmalardan faqat ruxsat etilgan holatda foydalanish.</p></div>
-          <div class="rule-card"><span>05</span><h3>Forma va tartib</h3><p>Maktabning belgilangan kiyinish va ichki tartib talablariga rioya qilish.</p></div>
-          <div class="rule-card"><span>06</span><h3>Xavfsizlik</h3><p>Maktab hududida xavfsizlik qoidalariga amal qilish va boshqalarning xavfsizligini hurmat qilish.</p></div>
-        </div>
-        <div class="quote-box">“Tartib bor joyda — ta'lim bor, ta'lim bor joyda — kelajak bor.”</div>
-      </div>
-    </section>
-
-    <section class="section achievements" id="yutuqlar">
-      <div class="container">
-        <div class="section-heading center">
-          <span class="eyebrow">FAXRIMIZ</span>
-          <h2>Maktab yutuqlari</h2>
-          <p>O'quvchilarimizning ijodiy, madaniy va jamoaviy faoliyatidan lavhalar.</p>
-        </div>
-
-        <div class="achievement-feature">
-          <div class="achievement-photo">
-            <img src="assets/turon.jpg" alt="Turon teatri tanlovi">
-            <span class="photo-badge">🏆 2-O'RIN</span>
+          <div
+            class="hero-slider"
+            aria-label="Maktab yangiliklari va yutuqlari"
+          >
+            <div class="slider-track" id="sliderTrack">
+              <article class="slide active">
+                <img src="./img/35-mk.jpg" alt="35-maktab binosi" />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>🏫 MAKTABIMIZ BAXSI</span>
+                  <h2>Zamonaviy bilim maskani va yorug' kelajak poydevori</h2>
+                  <p>
+                    O'quvchilar uchun barcha sharoitlarga ega shinam va zamonaviy maktab binosi.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img
+                  src="./img/Raqs.jpg"
+                  alt="Madaniy tadbir va raqs"
+                />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>💃 MADANIY HAFALIK</span>
+                  <h2>Milliy raqs va ijodiy san'at go'zalligi</h2>
+                  <p>
+                    Iqtidorli o'quvchilarimizning milliy qadriyat va san'atimizni tarannum etuvchi go'zal raqslari.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img
+                  src="./img/Shashka.jpg"
+                  alt="Shashka musobaqasi"
+                />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>🧠 AQL ZAKOVAT</span>
+                  <h2>Shashka va shaxmat — zakovat hamda mantiqiy tafakkur</h2>
+                  <p>
+                    Har bir yurishda zakovat, har bir g'alabada mahorat namoyon bo'ladi.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img src="./img/14-yanvar.jpg" alt="14-yanvar Vatan himoyachilari kuni" />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>🛡️ VATANPARVARLIK</span>
+                  <h2>14-yanvar — Vatan hissi va jasorat bayrami</h2>
+                  <p>
+                    Mardlik, sadoqat va vatanparvarlik tuyg'ularini ulug'lovchi ma'naviy-ma'rifiy tadbirlardan lavha.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img
+                  src="./img/Sportchilar.jpg"
+                  alt="Sportchi o'quvchilar"
+                />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>🏆 SPORT FAXRIMIZ</span>
+                  <h2>Sog'lom tanda — sog'lom aql va doimiy g'alaba</h2>
+                  <p>
+                    Yosh sportchilarimizning irodali harakatlari va erishgan yuksak zafarlari.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img
+                  src="./img/Kuch sinashish.jpg"
+                  alt="Kuch sinashish va milliy sport"
+                />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>💪 CUVVAT VA INTIZOM</span>
+                  <h2>Murosa va do'stlik muhitidagi qizg'in bellashuvlar</h2>
+                  <p>
+                    Iroda va chaqqonlikni sinovdan o'tkazuvchi qiziqarli sport musobaqalari.
+                  </p>
+                </div>
+              </article>
+              <article class="slide">
+                <img src="./img/Futbol.jpg" alt="Futbol musobaqasi" />
+                <div class="slide-overlay"></div>
+                <div class="slide-caption">
+                  <span>⚽ YAIL BOSH KO'RSATKICH</span>
+                  <h2>Futbol — jamoaviy g'alaba va yuqori jo'shqinlik</h2>
+                  <p>
+                    Maydondagi har bir harakat, do'stona raqobat va unutilmas hayajonli lahzalar.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <button
+              class="slider-arrow prev"
+              id="prevSlide"
+              aria-label="Oldingi rasm"
+            >
+              ‹</button
+            ><button
+              class="slider-arrow next"
+              id="nextSlide"
+              aria-label="Keyingi rasm"
+            >
+              ›
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
           </div>
-          <div class="achievement-content">
-            <span class="eyebrow">TURON TEATRI TANLOVI</span>
-            <h3>Tumanda 2-o'rin</h3>
-            <p>O'quvchilarimizning sahna madaniyati, ijodkorligi va jamoaviy mehnati munosib natija bilan e'tirof etildi.</p>
-            <div class="achievement-tags"><span>🎭 Teatr</span><span>⭐ Ijod</span><span>🤝 Jamoa</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="maktab-haqida">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">BIZNING MAKTAB</span>
+            <h2>Maktab haqida</h2>
+            <p>
+              35-maktab — bilim, tarbiya, ijod va sportni birlashtiruvchi ta'lim
+              maskani.
+            </p>
           </div>
-        </div>
-
-        <div class="photo-gallery">
-          <article class="gallery-card"><img src="assets/sport_zal.jpg" alt="Maktab sport zali"><div><span>🏅 SPORT</span><h3>Sport zalidagi mashg'ulotlar</h3><p>Jamoaviylik, intizom va sog'lom turmush tarzi.</p></div></article>
-          <article class="gallery-card"><img src="assets/sport_maydon.jpg" alt="Maktab sport tadbiri"><div><span>⚽ FAOL HAYOT</span><h3>Sport tadbirlaridan lavha</h3><p>Faol o'quvchi — sog'lom va tetik avlod.</p></div></article>
-          <article class="gallery-card"><img src="assets/yutuq_turon.jpg" alt="Turon teatri tanlovi"><div><span>🎭 TURON TEATRI</span><h3>Tumanda 2-o'rin</h3><p>Ijodiy jamoamizning faxrli natijalaridan biri.</p></div></article>
-          <article class="gallery-card"><img src="assets/turon_sahna_yangi.jpg" alt="Turon teatri sahnasi"><div><span>🎼 SAN'AT VA MADANIYAT</span><h3>Ijodiy chiqishlar</h3><p>O'quvchilarimizning sahnadagi mahorati va ijodiy izlanishlari.</p></div></article>
-          <article class="gallery-card"><img src="assets/sport_zal_yangi.jpg" alt="Sport zalidagi o'quvchilar"><div><span>🏅 SPORT</span><h3>Sport zalidagi jamoa</h3><p>Intizom, iroda va jamoaviy ruh bilan olib borilayotgan mashg'ulotlar.</p></div></article>
-          <article class="gallery-card"><img src="assets/sport_maydon_yangi.jpg" alt="Sport tadbiri"><div><span>⚽ SPORT TADBIRI</span><h3>Faollik va do'stlik</h3><p>Maktab o'quvchilarining sport tadbiridagi faol ishtiroki.</p></div></article>
-        </div>
-
-        <div class="achievement-cards">
-          <article><b>🎭</b><h3>Ijod — kelajak kaliti</h3><p>San'at va madaniyatga qiziqish o'quvchining o'ziga ishonchini rivojlantiradi.</p></article>
-          <article><b>🏅</b><h3>Natija — mehnat mevasi</h3><p>Har bir tanlov ortida izlanish, mashg'ulot va jamoaviy harakat turadi.</p></article>
-          <article><b>🌟</b><h3>Iste'dodga imkon</h3><p>Har bir o'quvchining qobiliyatini namoyon etishi uchun maktabda imkoniyatlar yaratiladi.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section schedule-section" id="jadval">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">O'QUV JARAYONI • 5 KUNLIK</span>
-          <h2>Dars jadvali</h2>
-          <p>Har bir hafta kuni alohida ko'rsatiladi. Sinfni tanlang, so'ng Dushanba, Seshanba, Chorshanba, Payshanba yoki Juma kunini bosing.</p>
-        </div>
-
-        <div class="schedule-panel">
-          <div class="class-list" id="classList">
-            <button class="class-btn" data-class="class_1a" type="button">1-A</button>
-<button class="class-btn" data-class="class_1b" type="button">1-B</button>
-<button class="class-btn" data-class="class_1d" type="button">1-D</button>
-<button class="class-btn" data-class="class_2a" type="button">2-A</button>
-<button class="class-btn" data-class="class_2b" type="button">2-B</button>
-<button class="class-btn" data-class="class_2d" type="button">2-D</button>
-<button class="class-btn" data-class="class_3a" type="button">3-A</button>
-<button class="class-btn" data-class="class_3b" type="button">3-B</button>
-<button class="class-btn" data-class="class_3d" type="button">3-D</button>
-<button class="class-btn" data-class="class_4a" type="button">4-A</button>
-<button class="class-btn" data-class="class_4b" type="button">4-B</button>
-<button class="class-btn" data-class="class_4d" type="button">4-D</button>
-<button class="class-btn" data-class="class_5a" type="button">5-A</button>
-<button class="class-btn" data-class="class_5b" type="button">5-B</button>
-<button class="class-btn" data-class="class_5d" type="button">5-D</button>
-<button class="class-btn" data-class="class_6a" type="button">6-A</button>
-<button class="class-btn" data-class="class_6b" type="button">6-B</button>
-<button class="class-btn" data-class="class_7a" type="button">7-A</button>
-<button class="class-btn" data-class="class_7b" type="button">7-B</button>
-<button class="class-btn" data-class="class_8a" type="button">8-A</button>
-<button class="class-btn" data-class="class_8b" type="button">8-B</button>
-<button class="class-btn" data-class="class_9a" type="button">9-A</button>
-<button class="class-btn" data-class="class_9b" type="button">9-B</button>
-<button class="class-btn" data-class="class_10a" type="button">10-A</button>
-<button class="class-btn" data-class="class_10b" type="button">10-B</button>
-<button class="class-btn" data-class="class_11a" type="button">11-A</button>
-<button class="class-btn" data-class="class_11b" type="button">11-B</button>
-          </div>
-
-          <div class="schedule-result" id="scheduleResult">
-            <div class="empty-state">
-              <span>📚</span>
-              <h3>Sinfni tanlang</h3>
-              <p>Yuqoridagi sinf tugmalaridan birini bosing — shu sinfning 5 kunlik dars jadvali chiqadi.</p>
+          <div class="about-grid">
+            <div class="about-main glass-card">
+              <div class="big-icon">🏫</div>
+              <h3>Ta'lim va taraqqiyot maskani</h3>
+              <p>
+                Bizning maqsadimiz — o'quvchilarning bilimga qiziqishini
+                oshirish, mustaqil fikrlashini rivojlantirish, odob-axloq va
+                vatanparvarlik tuyg'ularini mustahkamlash.
+              </p>
+              <div class="mini-points">
+                <span>✓ Sifatli ta'lim</span>
+                <span>✓ Kuchli tarbiya</span>
+                <span>✓ Ijod va sport</span>
+                <span>✓ Ota-ona hamkorligi</span>
+              </div>
+            </div>
+            <div class="about-card glass-card">
+              <span>📖</span>
+              <h3>Bilim</h3>
+              <p>
+                Fanlarni puxta o'zlashtirish va zamonaviy ko'nikmalarni
+                rivojlantirish.
+              </p>
+            </div>
+            <div class="about-card glass-card">
+              <span>🤝</span>
+              <h3>Hamkorlik</h3>
+              <p>
+                Ustoz, o'quvchi va ota-onalar o'rtasida mustahkam hamkorlik.
+              </p>
+            </div>
+            <div class="about-card glass-card">
+              <span>🎨</span>
+              <h3>Ijodkorlik</h3>
+              <p>
+                Teatr, musiqa, san'at va turli tanlovlarda o'z iste'dodini
+                namoyon etish.
+              </p>
+            </div>
+            <div class="about-card glass-card">
+              <span>⚽</span>
+              <h3>Sport</h3>
+              <p>
+                Sog'lom turmush tarzi va jamoaviy sport faoliyatini
+                qo'llab-quvvatlash.
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="schedule-note">
+      <section class="section leadership-section" id="rahbariyat">
+        <div class="container">
+          <div class="section-heading center">
+            <span class="eyebrow">BOSHQARUV JAMOASI</span>
+            <h2>Maktab rahbariyati</h2>
+            <p>
+              Ta'lim, tarbiya va o'quvchilar rivojini boshqarib boruvchi mas'ul
+              xodimlar jamoasi.
+            </p>
+          </div>
+
+          <div class="leaders-grid">
+            <article class="leader-card">
+              <div class="portrait">
+                <img src="./img/Direktor.jpg" alt="Maktab direktori Gafulov Erkin" />
+              </div>
+              <span class="role">MAKTAB RAHBARI</span>
+              <h3>Gafulov Erkin</h3>
+              <p class="role-title">
+                Maktab direktori • Strategik rivojlanish va boshqaruv rahbari
+              </p>
+              <div class="work-box">
+                <b>💼 Ish faoliyati</b>
+                <p>
+                  Maktabning umumiy boshqaruvi, ta'lim sifati, jamoa faoliyati
+                  va rivojlanish jarayonlarini muvofiqlashtirish.
+                </p>
+              </div>
+            </article>
+
+            <article class="leader-card">
+              <div class="portrait">
+                <img src="./img/Nuridin ustoz.jpg" alt="Ma'naviy-ma'rifiy ishlar rahbari Murtazov Nuriddin" />
+              </div>
+              <span class="role">MA'NAVIY-MA'RIFIY YO'NALISH</span>
+              <h3>Murtazov Nuriddin</h3>
+              <p class="role-title">
+                Ma'naviy-ma'rifiy ishlar rahbari • Tarbiyaviy yo'nalish
+                koordinatori
+              </p>
+              <div class="work-box">
+                <b>💼 Ish faoliyati</b>
+                <p>
+                  O'quvchilarning ma'naviy tarbiyasi, ijtimoiy faolligi,
+                  tadbirlar va tarbiyaviy ishlarni tashkil etish.
+                </p>
+              </div>
+            </article>
+
+            <article class="leader-card">
+              <div class="portrait">
+                <img
+                  src="./img/Dilshod ustoz.jpg"
+                  alt="O'quv ishlari bo'yicha direktor o'rinbosari Xudoyshukurov Dilshod"
+                />
+              </div>
+              <span class="role">TA'LIM YO'NALISHLARI</span>
+              <h3>Xudoyshukurov Dilshod</h3>
+              <p class="role-title">
+                O'quv ishlari bo'yicha direktor o'rinbosari • Ta'lim jarayonlari
+                koordinatori
+              </p>
+              <div class="work-box">
+                <b>💼 Ish faoliyati</b>
+                <p>
+                  Dars jarayonini tashkil etish, o'qituvchilar faoliyatini
+                  muvofiqlashtirish va o'quv jarayonini nazorat qilish.
+                </p>
+              </div>
+            </article>
+
+            <article class="leader-card">
+              <div class="portrait">
+                <img src="./img/Pisiholog.jpg" alt="Maktab psixologi Jo'raboyeva Zarina" />
+              </div>
+              <span class="role">PSIXOLOGIK XIZMAT</span>
+              <h3>Jo`raboyeva Zarina</h3>
+              <p class="role-title">
+                Maktab psixologi • O'quvchilarni qo'llab-quvvatlash mutaxassisi
+              </p>
+              <div class="work-box">
+                <b>💼 Ish faoliyati</b>
+                <p>
+                  O'quvchilarning psixologik holatini qo'llab-quvvatlash,
+                  maslahatlar va sog'lom ijtimoiy muhitni mustahkamlash.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rules-section" id="qoidalar">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">TARTIB VA MAS'ULIYAT</span>
+            <h2>Maktab qoidalari</h2>
+            <p>
+              Maktabdagi o'quv jarayonini tartibli va xavfsiz tashkil etishga
+              yordam beradigan asosiy qoidalar.
+            </p>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-card">
+              <span>01</span>
+              <h3>Vaqtida kelish</h3>
+              <p>
+                Darslarga o'z vaqtida kelish va mashg'ulotlarga tayyor holda
+                qatnashish.
+              </p>
+            </div>
+            <div class="rule-card">
+              <span>02</span>
+              <h3>Hurmat</h3>
+              <p>
+                Ustozlar, sinfdoshlar va maktab xodimlariga hurmat bilan
+                munosabatda bo'lish.
+              </p>
+            </div>
+            <div class="rule-card">
+              <span>03</span>
+              <h3>Tozalik</h3>
+              <p>Sinf xonalari, hovli va umumiy hududlarni ozoda saqlash.</p>
+            </div>
+            <div class="rule-card">
+              <span>04</span>
+              <h3>Telefon madaniyati</h3>
+              <p>
+                Dars paytida telefon va boshqa qurilmalardan faqat ruxsat
+                etilgan holatda foydalanish.
+              </p>
+            </div>
+            <div class="rule-card">
+              <span>05</span>
+              <h3>Forma va tartib</h3>
+              <p>
+                Maktabning belgilangan kiyinish va ichki tartib talablariga
+                rioya qilish.
+              </p>
+            </div>
+            <div class="rule-card">
+              <span>06</span>
+              <h3>Xavfsizlik</h3>
+              <p>
+                Maktab hududida xavfsizlik qoidalariga amal qilish va
+                boshqalarning xavfsizligini hurmat qilish.
+              </p>
+            </div>
+          </div>
+          <div class="quote-box">
+            “Tartib bor joyda — ta'lim bor, ta'lim bor joyda — kelajak bor.”
+          </div>
+        </div>
+      </section>
+
+      <section class="section achievements" id="yutuqlar">
+        <div class="container">
+          <div class="section-heading center">
+            <span class="eyebrow">FAXRIMIZ</span>
+            <h2>Maktab yutuqlari</h2>
+            <p>
+              O'quvchilarimizning ijodiy, madaniy va jamoaviy faoliyatidan
+              lavhalar.
+            </p>
+          </div>
+
+          <div class="achievement-feature">
+            <div class="achievement-photo">
+              <img src="./img/Turon.jpg" alt="Turon teatri tanlovi tumanda 2-o'rin" />
+              <span class="photo-badge">🏆 2-O'RIN</span>
+            </div>
+            <div class="achievement-content">
+              <span class="eyebrow">TURON TEATRI TANLOVI</span>
+              <h3>Tumanda 2-o'rin</h3>
+              <p>
+                O'quvchilarimizning sahna madaniyati, ijodkorligi va jamoaviy
+                mehnati munosib natija bilan e'tirof etildi.
+              </p>
+              <div class="achievement-tags">
+                <span>🎭 Teatr</span><span>⭐ Ijod</span><span>🤝 Jamoa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="photo-gallery">
+            <article class="gallery-card">
+              <img src="./img/Raqs.jpg" alt="Milliy raqs ijrochilari" />
+              <div>
+                <span>💃 IJOD VA SAN'AT</span>
+                <h3>Milliy raqs va saxna ko'rinishi</h3>
+                <p>Nafosat, iqtidor va milliy san'atimiz jozibasi.</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img src="./img/Futbol.jpg" alt="Futbol bo'yicha maktab musobaqasi" />
+              <div>
+                <span>⚽ FAOL HAYOT</span>
+                <h3>Futbol musobaqasi va jo'shqinlik</h3>
+                <p>Maydondagi do'stona raqobat va yuqori jamoaviy ruh.</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img src="./img/Turon.jpg" alt="Turon teatri jamoasi" />
+              <div>
+                <span>🎭 TURON TEATRI</span>
+                <h3>Tumanda faxrli 2-o'rin</h3>
+                <p>Ijodiy jamoamizning yuksak sahnadagi faxrli muvaffaqiyati.</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img
+                src="./img/turon viloyat bosqichi.jpg"
+                alt="Turon teatri viloyat bosqichi"
+              />
+              <div>
+                <span>🎼 VILOYAT BOSQICHI</span>
+                <h3>Viloyat sahnasidagi chiqishlar</h3>
+                <p>
+                  O'quvchilarimizning viloyat miqyosidagi yuksak maxorati va ijodiy zafarlari.
+                </p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img
+                src="./img/Sportchilar.jpg"
+                alt="Maktab sportchi o'quvchilari"
+              />
+              <div>
+                <span>🏅 SPORT VA SALOMATLIK</span>
+                <h3>Chempionlarimiz va faol sportchilar</h3>
+                <p>
+                  Intizom, iroda va mustahkam salomatlik timsollari.
+                </p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img src="./img/Kuch sinashish.jpg" alt="Kuch sinashish va bellashuv" />
+              <div>
+                <span>💪 SPORT TADBIRI</span>
+                <h3>Chaqqonlik va kuch sinashish</h3>
+                <p>O'quvchilarning sport musobaqalaridagi qizg'in va murakkab bellashuvi.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="achievement-cards">
+            <article>
+              <b>🎭</b>
+              <h3>Ijod — kelajak kaliti</h3>
+              <p>
+                San'at va madaniyatga qiziqish o'quvchining o'ziga ishonchini
+                rivojlantiradi.
+              </p>
+            </article>
+            <article>
+              <b>🏅</b>
+              <h3>Natija — mehnat mevasi</h3>
+              <p>
+                Har bir tanlov ortida izlanish, mashg'ulot va jamoaviy harakat
+                turadi.
+              </p>
+            </article>
+            <article>
+              <b>🌟</b>
+              <h3>Iste'dodga imkon</h3>
+              <p>
+                Har bir o'quvchining qobiliyatini namoyon etishi uchun maktabda
+                imkoniyatlar yaratiladi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section schedule-section" id="jadval">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">O'QUV JARAYONI • 5 KUNLIK</span>
+            <h2>Dars jadvali</h2>
+            <p>
+              Har bir hafta kuni alohida ko'rsatiladi. Sinfni tanlang, so'ng
+              Dushanba, Seshanba, Chorshanba, Payshanba yoki Juma kunini bosing.
+            </p>
+          </div>
+
+          <div class="schedule-panel">
+            <div class="class-list" id="classList">
+              <button class="class-btn" data-class="class_1a" type="button">
+                1-A
+              </button>
+              <button class="class-btn" data-class="class_1b" type="button">
+                1-B
+              </button>
+              <button class="class-btn" data-class="class_1d" type="button">
+                1-D
+              </button>
+              <button class="class-btn" data-class="class_2a" type="button">
+                2-A
+              </button>
+              <button class="class-btn" data-class="class_2b" type="button">
+                2-B
+              </button>
+              <button class="class-btn" data-class="class_2d" type="button">
+                2-D
+              </button>
+              <button class="class-btn" data-class="class_3a" type="button">
+                3-A
+              </button>
+              <button class="class-btn" data-class="class_3b" type="button">
+                3-B
+              </button>
+              <button class="class-btn" data-class="class_3d" type="button">
+                3-D
+              </button>
+              <button class="class-btn" data-class="class_4a" type="button">
+                4-A
+              </button>
+              <button class="class-btn" data-class="class_4b" type="button">
+                4-B
+              </button>
+              <button class="class-btn" data-class="class_4d" type="button">
+                4-D
+              </button>
+              <button class="class-btn" data-class="class_5a" type="button">
+                5-A
+              </button>
+              <button class="class-btn" data-class="class_5b" type="button">
+                5-B
+              </button>
+              <button class="class-btn" data-class="class_5d" type="button">
+                5-D
+              </button>
+              <button class="class-btn" data-class="class_6a" type="button">
+                6-A
+              </button>
+              <button class="class-btn" data-class="class_6b" type="button">
+                6-B
+              </button>
+              <button class="class-btn" data-class="class_7a" type="button">
+                7-A
+              </button>
+              <button class="class-btn" data-class="class_7b" type="button">
+                7-B
+              </button>
+              <button class="class-btn" data-class="class_8a" type="button">
+                8-A
+              </button>
+              <button class="class-btn" data-class="class_8b" type="button">
+                8-B
+              </button>
+              <button class="class-btn" data-class="class_9a" type="button">
+                9-A
+              </button>
+              <button class="class-btn" data-class="class_9b" type="button">
+                9-B
+              </button>
+              <button class="class-btn" data-class="class_10a" type="button">
+                10-A
+              </button>
+              <button class="class-btn" data-class="class_10b" type="button">
+                10-B
+              </button>
+              <button class="class-btn" data-class="class_11a" type="button">
+                11-A
+              </button>
+              <button class="class-btn" data-class="class_11b" type="button">
+                11-B
+              </button>
+            </div>
+
+            <div class="schedule-result" id="scheduleResult">
+              <div class="empty-state">
+                <span>📚</span>
+                <h3>Sinfni tanlang</h3>
+                <p>
+                  Yuqoridagi sinf tugmalaridan birini bosing — shu sinfning 5
+                  kunlik dars jadvali chiqadi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule-note"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">🏫 35-MAKTAB</div>
+          <p>
+            Surxondaryo viloyat Termiz tuman 35-umumiy o'rta ta'lim maktabi.
+          </p>
+        </div>
+        <div>
+          <h4>Bo'limlar</h4>
+          <a href="#maktab-haqida">Maktab haqida</a
+          ><a href="#rahbariyat">Rahbariyat</a><a href="#yutuqlar">Yutuqlar</a>
+        </div>
+        <div>
+          <h4>O'quv jarayoni</h4>
+          <a href="#jadval">Dars jadvali</a
+          ><a href="#qoidalar">Maktab qoidalari</a>
+        </div>
+        <div>
+          <h4>Shior</h4>
+          <p>“Bir jamoa — bir maqsad — sifatli ta'lim!”</p>
+          <p>🌙 Tungi / ☀️ Kunduzgi rejim mavjud.</p>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="footer-bottom">
+        © 2026 Muallif: 8-B Sinif o'quvchisi -
+        <a href="https://t.me/Faxriyor_Baxtiyorovich"
+          >Normurodov Faxriyor Baxtiyorovich</a
+        >
+      </div>
+    </footer>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div><div class="footer-brand">🏫 35-MAKTAB</div><p>Surxondaryo viloyat Termiz tuman 35-umumiy o'rta ta'lim maktabi.</p></div>
-      <div><h4>Bo'limlar</h4><a href="#maktab-haqida">Maktab haqida</a><a href="#rahbariyat">Rahbariyat</a><a href="#yutuqlar">Yutuqlar</a></div>
-      <div><h4>O'quv jarayoni</h4><a href="#jadval">Dars jadvali</a><a href="#qoidalar">Maktab qoidalari</a></div>
-      <div><h4>Shior</h4><p>“Bir jamoa — bir maqsad — sifatli ta'lim!”</p><p>🌙 Tungi / ☀️ Kunduzgi rejim mavjud.</p></div>
-    </div>
-    <div class="footer-bottom">© 2026 Muallif: 8-B Sinif o'quvchisi - Normurodov Faxriyor Baxtiyorovich</div>
-  </footer>
-
-  <button class="to-top" id="toTop" aria-label="Yuqoriga">↑</button>
-  <script src="script.js"></script>
-</body>
+    <button class="to-top" id="toTop" aria-label="Yuqoriga">↑</button>
+    <script src="script.js"></script>
+  </body>
 </html>

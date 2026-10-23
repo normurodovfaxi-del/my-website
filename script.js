@@ -1,166 +1,82 @@
-
-const grid = document.getElementById("newsGrid");
-const statusText = document.getElementById("status");
-const errorBox = document.getElementById("error");
-const emptyBox = document.getElementById("empty");
-const searchInput = document.getElementById("searchInput");
-const pageTitle = document.getElementById("pageTitle");
-
-const labels = {
-  barchasi: "So‘nggi yangiliklar",
-  ozbekiston: "O‘zbekiston",
-  talim: "Ta’lim",
-  texnologiya: "Texnologiya",
-  sport: "Sport"
-};
-
-let news = [];
-let currentPage = "barchasi";
-
-function escapeText(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-}
-
-function validUrl(value) {
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" || url.protocol === "http:"
-      ? url.href : "";
-  } catch {
-    return "";
+(() => {
+  "use strict";
+  const D = window.TY_DATA;
+  const $ = (s, root=document) => root.querySelector(s);
+  const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+  let lang = localStorage.getItem("ty-lang") || "uz";
+  let theme = localStorage.getItem("ty-theme") || "dark";
+  let aiCategory = "all", promptCategory = "all", searchTerm = "";
+  const tr = (uz, ru) => lang === "ru" ? ru : uz;
+  const I18N = {
+    uz: {tagline:"AI va texnologiyalar olami",navAI:"AI vositalari",navPrompts:"Promptlar",navTools:"Asboblar",navLearn:"Darslar",navHelp:"Yordam",heroEyebrow:"BEPUL TEXNOLOGIYA MARKAZI",heroTitle:'Texnologiyalar endi <span>hammaga oson.</span>',heroText:"AI vositalarini toping, tayyor promptlardan foydalaning va texnologiyalarni o‘zbek tilida o‘rganing.",searchPlaceholder:"AI, prompt yoki qo‘llanma qidirish...",searchButton:"Qidirish",freeNote:"Bepul boshlash mumkin",bilingualNote:"O‘zbekcha + Русский",floatOne:"Yangi imkoniyatlar",floatTwo:"O‘rganing va yarating",statAI:"AI vositasi",statPrompt:"Tayyor prompt",statTools:"Bepul asbob",statFree:"Bepul sayt kodi",aiTitle:"AI vositalarini kashf eting",aiSub:"Har bir vazifaga mos yordamchini toping.",viewAll:"Barchasini ko‘rish ↗",all:"Barchasi",catChat:"Chat va matn",catImage:"Rasm va dizayn",catVideo:"Video va audio",catCode:"Dasturlash",emptyAI:"Mos vosita topilmadi. Boshqa so‘z bilan qidiring.",promptTitle:"Tayyor promptlar",promptSub:"Promptni nusxalab, AI yordamchisiga yuboring.",pStudy:"Ta’lim",pContent:"Kontent",pCoding:"Kod",pDaily:"Kundalik",emptyPrompt:"Bu bo‘limda hozircha natija yo‘q.",toolsTitle:"Bepul onlayn asboblar",toolsSub:"Ma’lumotlaringiz shu brauzerda qayta ishlanadi.",wordTitle:"So‘z va belgi sanagich",wordSub:"Matn uzunligini tez hisoblang.",wordPlaceholder:"Matningizni shu yerga yozing...",characters:"belgi",words:"so‘z",colorTitle:"Rang tanlagich",colorSub:"Saytingiz uchun rang tanlang.",copyColor:"Rang kodini nusxalash",passwordTitle:"Parol kuchi tekshiruvi",passwordSub:"Parolni internetga yubormasdan tekshiring.",passwordPlaceholder:"Sinov parolini kiriting",passwordEmpty:"Parol kiritilmagan",showPassword:"Parolni ko‘rsatish",hidePassword:"Parolni yashirish",passwordPrivacy:"Haqiqiy parolingizni bu yoki boshqa begona saytlarga kiritmang.",caseTitle:"Matn registri",caseSub:"Katta-kichik harflarni o‘zgartiring.",casePlaceholder:"Matn kiriting...",upper:"KATTA HARF",lower:"kichik harf",copyText:"Matnni nusxalash",base64Title:"Base64 kodlash",base64Sub:"Oddiy matnni Base64 formatiga o‘tkazing yoki qaytaring.",base64Placeholder:"Matn yoki Base64 kod...",encode:"Kodlash",decode:"Qaytarish",base64Note:"Base64 shifrlash emas, maxfiy ma’lumot yubormang.",learnTitle:"Dasturlashni o‘rganing",learnSub:"Noldan boshlovchilar uchun sodda yo‘l xaritasi.",helpTitle:"Kompyuter bo‘yicha yordam",helpSub:"Ko‘p uchraydigan muammolar uchun boshlang‘ich yo‘riqnomalar.",calloutTitle:"Har kuni yangi narsani o‘rganing.",calloutText:"Kichik qadamlar katta natijaga olib keladi. TechYordam UZ — texnologiyani osonroq o‘rganishingiz uchun.",explore:"Kashf etish ↗",footerText:"Mustaqil o‘quv loyihasi. Tashqi xizmatlar o‘z shartlari va maxfiylik siyosatiga ega.",open:"Ochish ↗",free:"Bepul reja bor*",details:"Batafsil",copyPrompt:"Promptni nusxalash",copied:"Nusxalandi!",copyFailed:"Nusxalab bo‘lmadi. Matnni belgilang va nusxalang.",promptLabel:"TAYYOR PROMPT",openOfficial:"Rasmiy saytni ochish ↗",officialNotice:"Bepul tarif va imkoniyatlar o‘zgarishi mumkin. Rasmiy saytdagi shartlarni tekshiring.",learning:"DARS",steps:"Bosqichlar",close:"Yopish",passwordWeak:"Zaif",passwordMedium:"O‘rtacha",passwordStrong:"Kuchliroq",passwordVeryStrong:"Juda kuchli",encoded:"Matn kodlandi.",decoded:"Matn qaytarildi.",badBase64:"Bu matnni Base64 sifatida o‘qib bo‘lmadi.",colorInvalid:"HEX rang kodi noto‘g‘ri.",searchNone:"Qidiruv bo‘yicha hech narsa topilmadi.",showSteps:"Qadamlarni ko‘rish",hideSteps:"Qadamlarni yashirish",external:"Tashqi sayt",searchResults:"Qidiruv natijalari"},
+    ru: {tagline:"Мир ИИ и технологий",navAI:"ИИ-инструменты",navPrompts:"Промпты",navTools:"Инструменты",navLearn:"Обучение",navHelp:"Помощь",heroEyebrow:"БЕСПЛАТНЫЙ ТЕХНОЦЕНТР",heroTitle:'Технологии становятся <span>понятными всем.</span>',heroText:"Находите ИИ-инструменты, используйте готовые промпты и изучайте технологии на узбекском и русском языках.",searchPlaceholder:"Поиск ИИ, промпта или инструкции...",searchButton:"Найти",freeNote:"Можно начать бесплатно",bilingualNote:"O‘zbekcha + Русский",floatOne:"Новые возможности",floatTwo:"Изучайте и создавайте",statAI:"ИИ-инструментов",statPrompt:"Готовых промптов",statTools:"Бесплатных инструментов",statFree:"Код сайта бесплатный",aiTitle:"Откройте ИИ-инструменты",aiSub:"Найдите помощника для своей задачи.",viewAll:"Смотреть все ↗",all:"Все",catChat:"Чат и текст",catImage:"Изображения и дизайн",catVideo:"Видео и аудио",catCode:"Программирование",emptyAI:"Инструменты не найдены. Попробуйте другой запрос.",promptTitle:"Готовые промпты",promptSub:"Скопируйте промпт и отправьте ИИ-помощнику.",pStudy:"Обучение",pContent:"Контент",pCoding:"Код",pDaily:"Повседневное",emptyPrompt:"В этом разделе пока ничего нет.",toolsTitle:"Бесплатные онлайн-инструменты",toolsSub:"Данные обрабатываются в вашем браузере.",wordTitle:"Счётчик слов и символов",wordSub:"Быстро посчитайте длину текста.",wordPlaceholder:"Введите текст здесь...",characters:"символов",words:"слов",colorTitle:"Выбор цвета",colorSub:"Выберите цвет для сайта.",copyColor:"Скопировать HEX-код",passwordTitle:"Проверка надёжности пароля",passwordSub:"Проверка без отправки пароля в интернет.",passwordPlaceholder:"Введите тестовый пароль",passwordEmpty:"Пароль не введён",showPassword:"Показать пароль",hidePassword:"Скрыть пароль",passwordPrivacy:"Не вводите настоящий пароль на этом или других сторонних сайтах.",caseTitle:"Регистр текста",caseSub:"Измените заглавные и строчные буквы.",casePlaceholder:"Введите текст...",upper:"ЗАГЛАВНЫЕ",lower:"строчные",copyText:"Скопировать текст",base64Title:"Кодирование Base64",base64Sub:"Преобразуйте текст в Base64 или обратно.",base64Placeholder:"Текст или код Base64...",encode:"Кодировать",decode:"Декодировать",base64Note:"Base64 — не шифрование. Не вводите секретные данные.",learnTitle:"Изучайте программирование",learnSub:"Простой маршрут для начинающих.",helpTitle:"Помощь с компьютером",helpSub:"Базовые инструкции для распространённых проблем.",calloutTitle:"Узнавайте что-то новое каждый день.",calloutText:"Маленькие шаги ведут к большим результатам. TechYordam UZ помогает изучать технологии проще.",explore:"Изучить ↗",footerText:"Независимый учебный проект. Внешние сервисы имеют собственные условия и политику конфиденциальности.",open:"Открыть ↗",free:"Есть бесплатный тариф*",details:"Подробнее",copyPrompt:"Скопировать промпт",copied:"Скопировано!",copyFailed:"Не удалось скопировать. Выделите текст и скопируйте вручную.",promptLabel:"ГОТОВЫЙ ПРОМПТ",openOfficial:"Открыть официальный сайт ↗",officialNotice:"Бесплатные тарифы и возможности могут меняться. Проверьте условия на официальном сайте.",learning:"УРОК",steps:"Шаги",close:"Закрыть",passwordWeak:"Слабый",passwordMedium:"Средний",passwordStrong:"Надёжнее",passwordVeryStrong:"Очень надёжный",encoded:"Текст закодирован.",decoded:"Текст декодирован.",badBase64:"Не удалось прочитать текст как Base64.",colorInvalid:"Неверный HEX-код цвета.",searchNone:"По запросу ничего не найдено.",showSteps:"Показать шаги",hideSteps:"Скрыть шаги",external:"Внешний сайт",searchResults:"Результаты поиска"}
+  };
+  function t(key){return I18N[lang][key] || I18N.uz[key] || key;}
+  function applyLanguage(){
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(I18N[lang][key])el.innerHTML=I18N[lang][key];});
+    $$("[data-i18n-placeholder]").forEach(el=>{const key=el.dataset.i18nPlaceholder;if(I18N[lang][key])el.placeholder=I18N[lang][key];});
+    $("#languageButton").textContent=lang==="uz"?"RU":"UZ";
+    $("#themeButton").textContent=theme==="dark"?"☼":"☾";
+    renderAI();renderPrompts();renderLessons();renderHelp();
+    updateWordCount();updateColorText();checkPassword();
   }
-}
-
-function render() {
-  const query = searchInput.value.trim().toLocaleLowerCase("uz");
-
-  const filtered = news.filter(item => {
-    const categoryMatch =
-      currentPage === "barchasi" || item.category === currentPage;
-
-    const text = `${item.title} ${item.description}`
-      .toLocaleLowerCase("uz");
-
-    return categoryMatch && text.includes(query);
-  });
-
-  pageTitle.textContent = labels[currentPage];
-  grid.replaceChildren();
-
-  filtered.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "news-card";
-
-    const imageUrl = validUrl(item.image);
-    const articleUrl = validUrl(item.link) || "https://zamin.uz/";
-
-    const media = imageUrl
-      ? `<img class="news-image" src="${escapeText(imageUrl)}"
-          alt="${escapeText(item.title)}" loading="lazy">`
-      : `<div class="image-placeholder" aria-label="Rasm mavjud emas">📰</div>`;
-
-    const date = item.date
-      ? new Date(item.date).toLocaleDateString("uz-UZ")
-      : "";
-
-    card.innerHTML = `
-      ${media}
-      <div class="card-content">
-        <span class="tag">${escapeText(labels[item.category] || "Yangilik")}</span>
-        <h3>${escapeText(item.title)}</h3>
-        <p>${escapeText(item.description || "Maqolani asl manbadan o‘qing.")}</p>
-        <div class="news-date">${escapeText(date)} · Manba: Zamin.uz</div>
-        <a class="read-more" href="${escapeText(articleUrl)}"
-           target="_blank" rel="noopener noreferrer">
-          Batafsil o‘qish ↗
-        </a>
-      </div>
-    `;
-
-    const img = card.querySelector("img");
-    if (img) {
-      img.addEventListener("error", () => {
-        const placeholder = document.createElement("div");
-        placeholder.className = "image-placeholder";
-        placeholder.textContent = "📰";
-        img.replaceWith(placeholder);
-      }, { once: true });
-    }
-
-    grid.appendChild(card);
-  });
-
-  emptyBox.hidden = filtered.length !== 0;
-  statusText.textContent = `${filtered.length} ta xabar ko‘rsatildi`;
-}
-
-async function loadNews() {
-  errorBox.hidden = true;
-  statusText.textContent = "Zamin.uz yangiliklari yuklanmoqda...";
-  grid.replaceChildren();
-
-  try {
-    const response = await fetch("/api/news");
-
-    if (!response.ok) {
-      throw new Error("RSS manbasiga ulanish muvaffaqiyatsiz tugadi.");
-    }
-
-    const data = await response.json();
-    news = Array.isArray(data.news) ? data.news : [];
-
-    if (!news.length) {
-      throw new Error("RSS tasmasida hozircha xabar topilmadi.");
-    }
-
-    render();
-    statusText.textContent =
-      `${news.length} ta xabar · Manba: Zamin.uz`;
-  } catch (error) {
-    errorBox.hidden = false;
-    errorBox.textContent =
-      "Yangiliklarni olib bo‘lmadi. " + error.message +
-      " server.js ishga tushganini va RSS manzilini tekshiring.";
-    statusText.textContent = "Yangiliklarni yuklashda xatolik";
+  function safeText(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+  function matchSearch(...values){return !searchTerm || values.some(v=>String(v||"").toLowerCase().includes(searchTerm));}
+  function renderAI(){
+    const list=D.ai.filter(x=>(aiCategory==="all"||x.cat===aiCategory)&&matchSearch(x.name,x.uz,x.ru,catLabel(x.cat)));
+    $("#aiGrid").innerHTML=list.map(x=>`<article class="ai-card"><div class="card-top"><div class="app-icon">${safeText(x.mark)}</div><span class="tag">${safeText(t("free"))}</span></div><h3>${safeText(x.name)}</h3><p>${safeText(lang==="ru"?x.ru:x.uz)}</p><div class="card-footer"><span class="category-label">${safeText(catLabel(x.cat))}</span><a class="small-link" href="${x.url}" target="_blank" rel="noopener noreferrer">${safeText(t("open"))}</a></div></article>`).join("");
+    $("#aiEmpty").classList.toggle("hidden",list.length>0);
   }
-}
-
-document.querySelectorAll(".nav-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    currentPage = button.dataset.page;
-
-    document.querySelectorAll(".nav-btn").forEach(btn =>
-      btn.classList.toggle("active", btn === button)
-    );
-
-    render();
-  });
-});
-
-searchInput.addEventListener("input", render);
-document.getElementById("refreshBtn").addEventListener("click", loadNews);
-
-document.getElementById("themeBtn").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  document.getElementById("themeBtn").textContent =
-    document.body.classList.contains("dark") ? "☀️" : "🌙";
-});
-
-document.getElementById("homeLink").addEventListener("click", event => {
-  event.preventDefault();
-  currentPage = "barchasi";
-  document.querySelectorAll(".nav-btn").forEach(btn =>
-    btn.classList.toggle("active", btn.dataset.page === "barchasi")
-  );
-  render();
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-loadNews();
+  function catLabel(cat){const m={chat:t("catChat"),image:t("catImage"),video:t("catVideo"),code:t("catCode")};return m[cat]||cat;}
+  function renderPrompts(){
+    const list=D.prompts.filter(x=>(promptCategory==="all"||x.cat===promptCategory)&&matchSearch(x.titleUz,x.titleRu,x.textUz,x.textRu));
+    $("#promptGrid").innerHTML=list.map((x,i)=>`<article class="prompt-card"><div class="card-top"><span class="section-kicker">${safeText(t("promptLabel"))}</span><span class="category-label">${safeText(promptCatLabel(x.cat))}</span></div><h3>${safeText(lang==="ru"?x.titleRu:x.titleUz)}</h3><div class="prompt-text">${safeText(lang==="ru"?x.textRu:x.textUz)}</div><button class="copy-button" type="button" data-prompt-index="${D.prompts.indexOf(x)}">▣ ${safeText(t("copyPrompt"))}</button></article>`).join("");
+    $("#promptEmpty").classList.toggle("hidden",list.length>0);
+  }
+  function promptCatLabel(cat){return ({study:t("pStudy"),content:t("pContent"),coding:t("pCoding"),daily:t("pDaily")})[cat]||cat;}
+  function renderLessons(){
+    $("#learningGrid").innerHTML=D.lessons.map(x=>`<article class="learning-card"><span class="lesson-number">${x.num}</span><div class="app-icon">${safeText(x.icon)}</div><span class="section-kicker">${safeText(t("learning"))} ${x.num}</span><h3>${safeText(lang==="ru"?x.titleRu:x.titleUz)}</h3><p>${safeText(lang==="ru"?x.descRu:x.descUz)}</p><ul>${(lang==="ru"?x.itemsRu:x.itemsUz).map(i=>`<li>${safeText(i)}</li>`).join("")}</ul><a class="small-link" href="${x.url}" target="_blank" rel="noopener noreferrer">${safeText(t("open"))}</a></article>`).join("");
+  }
+  function renderHelp(){
+    $("#helpList").innerHTML=D.help.map((x,i)=>`<article class="help-item"><button class="help-question" type="button" aria-expanded="false" data-help-index="${i}"><span>${safeText(lang==="ru"?x.titleRu:x.titleUz)}</span><span>+</span></button><div class="help-answer hidden"><ol>${(lang==="ru"?x.stepsRu:x.stepsUz).map(s=>`<li>${safeText(s)}</li>`).join("")}</ol></div></article>`).join("");
+  }
+  function toast(message){const el=$("#toast");el.textContent=message;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2300);}
+  async function copyText(value){
+    try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);}else{const ta=document.createElement("textarea");ta.value=value;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();const ok=document.execCommand("copy");ta.remove();if(!ok)throw new Error("copy failed");}toast(t("copied"));}
+    catch(e){toast(t("copyFailed"));}
+  }
+  function updateWordCount(){const value=$("#wordInput").value;const trimmed=value.trim();$("#charCount").textContent=value.length.toLocaleString(lang==="ru"?"ru-RU":"uz-UZ");$("#wordCount").textContent=(trimmed?trimmed.split(/\s+/u).length:0).toLocaleString(lang==="ru"?"ru-RU":"uz-UZ");}
+  function updateColorText(){const hex=$("#colorInput").value.toUpperCase();$("#hexInput").value=hex;$("#colorPreview").style.background=hex;}
+  function checkPassword(){
+    const value=$("#passwordInput").value;const bar=$("#strengthBar");const label=$("#strengthLabel");
+    if(!value){bar.style.width="0";bar.style.background="#f87171";label.textContent=t("passwordEmpty");return;}
+    let score=0;if(value.length>=8)score++;if(value.length>=12)score++;if(/[a-z]/.test(value)&&/[A-Z]/.test(value))score++;if(/\d/.test(value))score++;if(/[^A-Za-z0-9]/.test(value))score++;
+    const levels=[{width:"20%",color:"#f87171",key:"passwordWeak"},{width:"40%",color:"#fb923c",key:"passwordWeak"},{width:"60%",color:"#facc15",key:"passwordMedium"},{width:"80%",color:"#34d399",key:"passwordStrong"},{width:"100%",color:"#10b981",key:"passwordVeryStrong"}];const level=levels[Math.max(0,score-1)];bar.style.width=level.width;bar.style.background=level.color;label.textContent=t(level.key);
+  }
+  $("#languageButton").addEventListener("click",()=>{lang=lang==="uz"?"ru":"uz";localStorage.setItem("ty-lang",lang);applyLanguage();});
+  $("#themeButton").addEventListener("click",()=>{theme=theme==="dark"?"light":"dark";document.body.classList.toggle("light",theme==="light");localStorage.setItem("ty-theme",theme);$("#themeButton").textContent=theme==="dark"?"☼":"☾";});
+  document.body.classList.toggle("light",theme==="light");
+  $("#menuButton").addEventListener("click",()=>$("#mainNav").classList.toggle("open"));
+  $$("#mainNav a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("open")));
+  $("#aiFilters").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(!b)return;aiCategory=b.dataset.category;$$("[data-category]",$("#aiFilters")).forEach(x=>x.classList.toggle("active",x===b));renderAI();});
+  $("#promptFilters").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(!b)return;promptCategory=b.dataset.category;$$("[data-category]",$("#promptFilters")).forEach(x=>x.classList.toggle("active",x===b));renderPrompts();});
+  $("#globalSearch").addEventListener("input",()=>{searchTerm=$("#globalSearch").value.trim().toLowerCase();renderAI();renderPrompts();});
+  $("#searchButton").addEventListener("click",()=>{searchTerm=$("#globalSearch").value.trim().toLowerCase();renderAI();renderPrompts();const target=searchTerm? (D.ai.some(x=>matchSearch(x.name,x.uz,x.ru))?"#ai":"#prompts"):"#ai";document.querySelector(target).scrollIntoView({behavior:"smooth"});if(searchTerm&&$("#aiEmpty").classList.contains("hidden")===false&&$("#promptEmpty").classList.contains("hidden")===false)toast(t("searchNone"));});
+  $("#showAllAI").addEventListener("click",()=>{aiCategory="all";searchTerm="";$("#globalSearch").value="";$$("[data-category]",$("#aiFilters")).forEach(x=>x.classList.toggle("active",x.dataset.category==="all"));renderAI();});
+  $("#promptGrid").addEventListener("click",e=>{const b=e.target.closest("[data-prompt-index]");if(!b)return;const p=D.prompts[Number(b.dataset.promptIndex)];copyText(lang==="ru"?p.textRu:p.textUz);});
+  $("#wordInput").addEventListener("input",updateWordCount);
+  $("#colorInput").addEventListener("input",updateColorText);
+  $("#hexInput").addEventListener("input",()=>{const v=$("#hexInput").value.trim();if(/^#[0-9a-fA-F]{6}$/.test(v)){$("#colorInput").value=v;$("#colorPreview").style.background=v;}});
+  $("#passwordInput").addEventListener("input",checkPassword);
+  $("#togglePassword").addEventListener("click",()=>{const p=$("#passwordInput");p.type=p.type==="password"?"text":"password";$("#togglePassword").textContent=p.type==="password"?t("showPassword"):t("hidePassword");});
+  $("#upperButton").addEventListener("click",()=>$("#caseInput").value=$("#caseInput").value.toLocaleUpperCase());
+  $("#lowerButton").addEventListener("click",()=>$("#caseInput").value=$("#caseInput").value.toLocaleLowerCase());
+  $$(".copy-action").forEach(b=>b.addEventListener("click",()=>{const input=$("#"+b.dataset.copyTarget);copyText(input.value);}));
+  $("#encodeButton").addEventListener("click",()=>{try{$("#base64Input").value=btoa(unescape(encodeURIComponent($("#base64Input").value)));toast(t("encoded"));}catch(e){toast(t("badBase64"));}});
+  $("#decodeButton").addEventListener("click",()=>{try{$("#base64Input").value=decodeURIComponent(escape(atob($("#base64Input").value.trim())));toast(t("decoded"));}catch(e){toast(t("badBase64"));}});
+  $("#helpList").addEventListener("click",e=>{const b=e.target.closest("[data-help-index]");if(!b)return;const answer=b.nextElementSibling;const open=answer.classList.contains("hidden");answer.classList.toggle("hidden",!open);b.setAttribute("aria-expanded",String(open));b.lastElementChild.textContent=open?"−":"+";});
+  const dialog=$("#detailDialog");$("#dialogClose").addEventListener("click",()=>dialog.close());dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+  $("#year").textContent=new Date().getFullYear();
+  applyLanguage();
+})();

@@ -1,69 +1,106 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zamin.uz manbasiga havolalar bilan yangiliklar">
-  <title>Tezkor Xabar</title>
+  <meta name="description" content="TechYordam UZ — AI vositalari, tayyor promptlar, bepul onlayn asboblar va texnologiya darslari o‘zbekcha va ruscha.">
+  <title>TechYordam UZ — AI va texnologiyalar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <a href="#" class="logo" id="homeLink">📰 TEZKOR XABAR</a>
-    <button id="themeBtn" class="theme-btn">🌙</button>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TechYordam UZ bosh sahifa">
+      <span class="brand-icon">TY</span><span>TechYordam <b>UZ</b><small data-i18n="tagline">AI va texnologiyalar olami</small></span>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#ai" data-i18n="navAI">AI vositalari</a><a href="#prompts" data-i18n="navPrompts">Promptlar</a>
+      <a href="#tools" data-i18n="navTools">Asboblar</a><a href="#learn" data-i18n="navLearn">Darslar</a><a href="#help" data-i18n="navHelp">Yordam</a>
+    </nav>
+    <div class="top-actions">
+      <button class="language-button" id="languageButton" type="button" aria-label="Tilni almashtirish">RU</button>
+      <button class="theme-button" id="themeButton" type="button" aria-label="Rang rejimini almashtirish">☼</button>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menyuni ochish">☰</button>
+    </div>
   </header>
 
-  <nav class="navbar">
-    <button class="nav-btn active" data-page="barchasi">Barchasi</button>
-    <button class="nav-btn" data-page="ozbekiston">🇺🇿 O‘zbekiston</button>
-    <button class="nav-btn" data-page="talim">🎓 Ta’lim</button>
-    <button class="nav-btn" data-page="texnologiya">💻 Texnologiya</button>
-    <button class="nav-btn" data-page="sport">⚽ Sport</button>
-  </nav>
-
-  <main class="container">
+  <main>
     <section class="hero">
-      <span class="eyebrow">DOLZARB XABARLAR</span>
-      <h1>Yangiliklardan <span>xabardor bo‘ling!</span></h1>
-      <p>Yangiliklarni kuzating va asl maqolani manbasida o‘qing.</p>
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse"></span><span data-i18n="heroEyebrow">BEPUL TEXNOLOGIYA MARKAZI</span></span>
+        <h1 data-i18n="heroTitle">Texnologiyalar endi <span>hammaga oson.</span></h1>
+        <p data-i18n="heroText">AI vositalarini toping, tayyor promptlardan foydalaning va texnologiyalarni o‘zbek tilida o‘rganing.</p>
+        <div class="hero-search">
+          <span>⌕</span><input id="globalSearch" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="AI, prompt yoki qo‘llanma qidirish..." autocomplete="off">
+          <button id="searchButton" type="button" data-i18n="searchButton">Qidirish</button>
+        </div>
+        <div class="hero-notes"><span>✓ <span data-i18n="freeNote">Bepul boshlash mumkin</span></span><span>✓ <span data-i18n="bilingualNote">O‘zbekcha + Русский</span></span></div>
+      </div>
+      <div class="hero-art" aria-label="Texnologiya tasviri">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="core"><span>✦</span><b>AI</b><small>TECH / UZ</small></div>
+        <div class="float-card float-top"><span class="float-icon cyan">✧</span><span><b>AI tools</b><small data-i18n="floatOne">Yangi imkoniyatlar</small></span></div>
+        <div class="float-card float-bottom"><span class="float-icon violet">⌘</span><span><b>Learn & build</b><small data-i18n="floatTwo">O‘rganing va yarating</small></span></div>
+        <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span><span class="spark spark-three">·</span>
+      </div>
     </section>
 
-    <div class="search">
-      <span>🔎</span>
-      <input id="searchInput" type="search"
-        placeholder="Yangilik qidirish..." aria-label="Yangilik qidirish">
-    </div>
+    <section class="stats">
+      <div><b>12+</b><span data-i18n="statAI">AI vositasi</span></div><div><b>12</b><span data-i18n="statPrompt">Tayyor prompt</span></div>
+      <div><b>5</b><span data-i18n="statTools">Bepul asbob</span></div><div><b>100%</b><span data-i18n="statFree">Bepul sayt kodi</span></div>
+    </section>
 
-    <div class="heading">
-      <div>
-        <h2 id="pageTitle">So‘nggi yangiliklar</h2>
-        <p id="status">Yangiliklar yuklanmoqda...</p>
+    <section class="content-section" id="ai">
+      <div class="section-heading"><div><span class="section-kicker">01 / DISCOVER</span><h2 data-i18n="aiTitle">AI vositalarini kashf eting</h2><p data-i18n="aiSub">Har bir vazifaga mos yordamchini toping.</p></div><a class="text-link" href="#ai" id="showAllAI" data-i18n="viewAll">Barchasini ko‘rish ↗</a></div>
+      <div class="filter-row" id="aiFilters">
+        <button class="filter-chip active" data-category="all" data-i18n="all">Barchasi</button>
+        <button class="filter-chip" data-category="chat" data-i18n="catChat">Chat va matn</button>
+        <button class="filter-chip" data-category="image" data-i18n="catImage">Rasm va dizayn</button>
+        <button class="filter-chip" data-category="video" data-i18n="catVideo">Video va audio</button>
+        <button class="filter-chip" data-category="code" data-i18n="catCode">Dasturlash</button>
       </div>
-      <button id="refreshBtn" class="refresh">↻ Yangilash</button>
-    </div>
+      <div class="card-grid" id="aiGrid"></div>
+      <p class="empty-state hidden" id="aiEmpty" data-i18n="emptyAI">Mos vosita topilmadi. Boshqa so‘z bilan qidiring.</p>
+    </section>
 
-    <div id="error" class="error" hidden></div>
-    <div id="newsGrid" class="news-grid"></div>
+    <section class="content-section" id="prompts">
+      <div class="section-heading"><div><span class="section-kicker">02 / COPY & CREATE</span><h2 data-i18n="promptTitle">Tayyor promptlar</h2><p data-i18n="promptSub">Promptni nusxalab, AI yordamchisiga yuboring.</p></div></div>
+      <div class="prompt-toolbar">
+        <div class="prompt-tabs" id="promptFilters"><button class="filter-chip active" data-category="all" data-i18n="all">Barchasi</button><button class="filter-chip" data-category="study" data-i18n="pStudy">Ta’lim</button><button class="filter-chip" data-category="content" data-i18n="pContent">Kontent</button><button class="filter-chip" data-category="coding" data-i18n="pCoding">Kod</button><button class="filter-chip" data-category="daily" data-i18n="pDaily">Kundalik</button></div>
+      </div>
+      <div class="prompt-grid" id="promptGrid"></div>
+      <p class="empty-state hidden" id="promptEmpty" data-i18n="emptyPrompt">Bu bo‘limda hozircha natija yo‘q.</p>
+    </section>
 
-    <div id="empty" class="empty" hidden>
-      Bu bo‘limda mos yangilik topilmadi.
-    </div>
+    <section class="content-section" id="tools">
+      <div class="section-heading"><div><span class="section-kicker">03 / QUICK TOOLS</span><h2 data-i18n="toolsTitle">Bepul onlayn asboblar</h2><p data-i18n="toolsSub">Ma’lumotlaringiz shu brauzerda qayta ishlanadi.</p></div></div>
+      <div class="tools-grid">
+        <article class="tool-card"><div class="tool-icon blue">Aa</div><h3 data-i18n="wordTitle">So‘z va belgi sanagich</h3><p data-i18n="wordSub">Matn uzunligini tez hisoblang.</p><textarea id="wordInput" rows="4" data-i18n-placeholder="wordPlaceholder" placeholder="Matningizni shu yerga yozing..."></textarea><div class="counter-row"><span><b id="charCount">0</b> <span data-i18n="characters">belgi</span></span><span><b id="wordCount">0</b> <span data-i18n="words">so‘z</span></span></div></article>
+        <article class="tool-card"><div class="tool-icon purple">#</div><h3 data-i18n="colorTitle">Rang tanlagich</h3><p data-i18n="colorSub">Saytingiz uchun rang tanlang.</p><div class="color-picker-row"><input id="colorInput" type="color" value="#38bdf8" aria-label="Rang tanlash"><input id="hexInput" type="text" value="#38BDF8" maxlength="7" aria-label="HEX rang kodi"></div><div class="color-preview" id="colorPreview"></div><button class="outline-button copy-action" data-copy-target="hexInput" type="button" data-i18n="copyColor">Rang kodini nusxalash</button></article>
+        <article class="tool-card"><div class="tool-icon green">⌁</div><h3 data-i18n="passwordTitle">Parol kuchi tekshiruvi</h3><p data-i18n="passwordSub">Parolni internetga yubormasdan tekshiring.</p><input id="passwordInput" type="password" autocomplete="new-password" data-i18n-placeholder="passwordPlaceholder" placeholder="Sinov parolini kiriting"><div class="strength-track"><span id="strengthBar"></span></div><div class="strength-label" id="strengthLabel" data-i18n="passwordEmpty">Parol kiritilmagan</div><button class="outline-button" id="togglePassword" type="button" data-i18n="showPassword">Parolni ko‘rsatish</button><small class="privacy-note" data-i18n="passwordPrivacy">Haqiqiy parolingizni bu yoki boshqa begona saytlarga kiritmang.</small></article>
+        <article class="tool-card"><div class="tool-icon orange">↔</div><h3 data-i18n="caseTitle">Matn registri</h3><p data-i18n="caseSub">Katta-kichik harflarni o‘zgartiring.</p><textarea id="caseInput" rows="3" data-i18n-placeholder="casePlaceholder" placeholder="Matn kiriting..."></textarea><div class="button-pair"><button class="outline-button" id="upperButton" type="button" data-i18n="upper">KATTA HARF</button><button class="outline-button" id="lowerButton" type="button" data-i18n="lower">kichik harf</button></div><button class="outline-button copy-action" data-copy-target="caseInput" type="button" data-i18n="copyText">Matnni nusxalash</button></article>
+        <article class="tool-card"><div class="tool-icon pink">⌗</div><h3 data-i18n="base64Title">Base64 kodlash</h3><p data-i18n="base64Sub">Oddiy matnni Base64 formatiga o‘tkazing yoki qaytaring.</p><textarea id="base64Input" rows="3" data-i18n-placeholder="base64Placeholder" placeholder="Matn yoki Base64 kod..."></textarea><div class="button-pair"><button class="outline-button" id="encodeButton" type="button" data-i18n="encode">Kodlash</button><button class="outline-button" id="decodeButton" type="button" data-i18n="decode">Qaytarish</button></div><small class="privacy-note" data-i18n="base64Note">Base64 shifrlash emas, maxfiy ma’lumot yubormang.</small></article>
+      </div>
+    </section>
 
-    <section class="source">
-      <h3>📌 Asl manba: Zamin.uz</h3>
-      <p>Mualliflik va yangiliklarning asl manbasiga hurmat bilan.</p>
-      <a href="https://zamin.uz/" target="_blank" rel="noopener noreferrer">
-        Zamin.uz saytiga o‘tish ↗
-      </a>
+    <section class="content-section" id="learn">
+      <div class="section-heading"><div><span class="section-kicker">04 / LEARN</span><h2 data-i18n="learnTitle">Dasturlashni o‘rganing</h2><p data-i18n="learnSub">Noldan boshlovchilar uchun sodda yo‘l xaritasi.</p></div></div>
+      <div class="learning-grid" id="learningGrid"></div>
+    </section>
+
+    <section class="content-section" id="help">
+      <div class="section-heading"><div><span class="section-kicker">05 / FIX IT</span><h2 data-i18n="helpTitle">Kompyuter bo‘yicha yordam</h2><p data-i18n="helpSub">Ko‘p uchraydigan muammolar uchun boshlang‘ich yo‘riqnomalar.</p></div></div>
+      <div class="help-list" id="helpList"></div>
+    </section>
+
+    <section class="callout">
+      <div class="callout-icon">✦</div><div><h2 data-i18n="calloutTitle">Har kuni yangi narsani o‘rganing.</h2><p data-i18n="calloutText">Kichik qadamlar katta natijaga olib keladi. TechYordam UZ — texnologiyani osonroq o‘rganishingiz uchun.</p></div><a href="#ai" class="primary-button" data-i18n="explore">Kashf etish ↗</a>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Tezkor Xabar</p>
-    <p>Yangiliklar manbasi: Zamin.uz</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-icon">TY</span><span>TechYordam <b>UZ</b><small data-i18n="tagline">AI va texnologiyalar olami</small></span></a><p data-i18n="footerText">Mustaqil o‘quv loyihasi. Tashqi xizmatlar o‘z shartlari va maxfiylik siyosatiga ega.</p><span>© <span id="year"></span> TechYordam UZ</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="detailDialog" class="detail-dialog"><button class="dialog-close" id="dialogClose" aria-label="Yopish">×</button><div id="dialogContent"></div></dialog>
+  <script src="data.js"></script><script src="script.js"></script>
 </body>
 </html>
